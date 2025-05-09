@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGlobe, FaCar, FaBed, FaSwimmingPool, FaWifi, FaUtensils } from 'react-icons/fa';
+import {  FaCar, FaBed, FaWifi } from 'react-icons/fa';
 import './WhyChooseUS.scss'
 
 

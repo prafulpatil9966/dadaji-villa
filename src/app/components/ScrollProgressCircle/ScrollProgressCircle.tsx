@@ -1,12 +1,11 @@
 'use client';
 
 import { useScroll, useSpring, motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoIosArrowUp   } from 'react-icons/io'; // Import icon
 import './ScrollProgressCircle.scss';
 
 export default function ScrollProgressCircle() {
-    const circleRef = useRef(null);
     const { scrollYProgress } = useScroll();
     const pathLength = useSpring(scrollYProgress, { stiffness: 100, damping: 20 });
     const [show, setShow] = useState(false);

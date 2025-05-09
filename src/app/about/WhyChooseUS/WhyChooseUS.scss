@@ -1,0 +1,15 @@
+.why-choose-us-section {
+    .why-choose-us-icon-div {
+        .why-choose-us-icon{
+            color: #91765a;
+        }
+      &:hover {
+        .why-choose-us-icon {
+          transform: rotate(360deg);
+          transition: transform 0.5s ease-in-out;
+          width: max-content;
+        }
+      }
+    }
+  }
+  

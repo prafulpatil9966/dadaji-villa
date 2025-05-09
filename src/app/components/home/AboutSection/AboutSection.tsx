@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import './AboutSection.css'
+import './AboutSection.scss'
 
 const AboutSection = () => {
     return (
-        <section className="py-20 bg-amber-50" id="about">
+        <section className="home-about-section py-20 bg-[#f5eee7]" id="about">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left Column */}
@@ -19,13 +19,17 @@ const AboutSection = () => {
                     >
                         <div className="text-sm uppercase text-[#91765a] mb-2">Since 2007</div>
                         <h2 className="text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Hotel</h2>
-                        <p className="mb-4 text-gray-600">
-                        Ground Floor:
-                        Features 2 spacious bedrooms, 1 common bathroom, a living room, a fully equipped kitchen, and a verandah with a swing overlooking a private garden.
+                        <p className='text-[#14100c] font-bold mr-2 mb-1'>
+                            Ground Floor :
                         </p>
-                        <p className="mb-6 text-gray-600">
-                        Upper Floor:
-                        Externally connected to the ground floor, it includes 2 bedrooms with attached bathrooms and a valley-facing terrace sit-out accessible from both rooms—perfect for relaxing with scenic views.
+                        <p className="home-about-subtext mb-4 text-gray-600">
+                            Features 2 spacious bedrooms, 1 common bathroom, a living room, a fully equipped kitchen, and a verandah with a swing overlooking a private garden.
+                        </p>
+                        <p className='text-[#14100c] font-bold mr-2 mb-1'>
+                            Upper Floor :
+                        </p>
+                        <p className="home-about-subtext mb-6 text-gray-600">
+                            Externally connected to the ground floor, it includes 2 bedrooms with attached bathrooms and a valley-facing terrace sit-out accessible from both rooms—perfect for relaxing with scenic views.
                         </p>
                         <div className="flex items-center gap-4">
                             <Image
@@ -33,11 +37,11 @@ const AboutSection = () => {
                                 alt="Signature"
                                 width={100}
                                 height={50}
-                                className="h-auto w-auto"
+                                className="img h-auto w-auto"
                             />
                             <div>
-                                <div className="font-semibold text-lg text-[#14100c]">Martin Norman</div>
-                                <div className="text-sm text-gray-500">General Manager</div>
+                                <div className="font-semibold text-lg text-[#14100c]">Pratik Patil</div>
+                                <div className="text-sm text-gray-500">Owner</div>
                             </div>
                         </div>
                     </motion.div>
@@ -50,14 +54,17 @@ const AboutSection = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <div className="relative z-10">
-                            <Image
-                                src="/aboutimg.jpg"
-                                alt="About"
-                                width={600}
-                                height={400}
-                                className="rounded-xl shadow-lg"
-                            />
+                        <div className="home-about-img-div z-10">
+                            <div className="home-about-inner-img-div">
+                                {/* <Image
+                                    
+                                /> */}
+                                <img src="/aboutimg.jpg"
+                                    alt="About"
+                                    // width={600}
+                                    // height={400}
+                                    className="home-about-img" />
+                            </div>
                         </div>
 
                         {/* Circular Text */}

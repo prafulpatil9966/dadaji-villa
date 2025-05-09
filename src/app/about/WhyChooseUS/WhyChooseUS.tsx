@@ -1,0 +1,63 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { FaGlobe, FaCar, FaBed, FaSwimmingPool, FaWifi, FaUtensils } from 'react-icons/fa';
+import './WhyChooseUS.scss'
+
+
+const WhyChooseUS = () => {
+    const facilities = [
+        {
+            icon: <FaCar className="text-4xl text-primary" />,
+            title: 'Parking Space',
+            description: 'Spacious and secure parking area available for all guests, ensuring convenience and peace of mind.',
+        },
+        {
+            icon: <FaBed className="text-4xl text-primary" />,
+            title: 'Room Service',
+            description: 'Enjoy 24/7 room service with a variety of delicious meals and amenities delivered to your door.',
+        },
+        {
+            icon: <FaWifi className="text-4xl text-primary" />,
+            title: 'Fibre Internet',
+            description: 'Stay connected with our high-speed fibre internet, perfect for work or entertainment.',
+        }
+    ];
+    
+    const itemVariants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0 },
+    };
+    return (
+        <section className="why-choose-us-section py-16">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-12">
+                    <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-0">Hotel Facilities</div>
+                    <h2 className="why-choose-us-section-heading text-[40px] font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {facilities.map((facility, index) => (
+                        <motion.div
+                            key={index}
+                            className="why-choose-us-icon-div p-6 border rounded-2xl shadow hover:shadow-lg transition duration-300 bg-white relative"
+                            variants={itemVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            // transition={{ duration: 0.4, delay: index * 0.1 }}
+                        >
+                            <div className="absolute top-4 right-4 text-gray-100 text-6xl opacity-10 pointer-events-none">
+                                {facility.icon}
+                            </div>
+                            <div className="why-choose-us-icon mb-4">{facility.icon}</div>
+                            <h5 className="text-lg font-semibold mb-2">{facility.title}</h5>
+                            <p className="text-sm text-gray-600">{facility.description}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export default WhyChooseUS

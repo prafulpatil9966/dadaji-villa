@@ -29,7 +29,7 @@ const WhyChooseUS = () => {
         visible: { opacity: 1, y: 0 },
     };
     return (
-        <section className="why-choose-us-section py-16">
+        <section className="why-choose-us-section py-16 md:py-0 sm:py-0">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-0">Hotel Facilities</div>

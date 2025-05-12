@@ -32,13 +32,13 @@ const AboutSection = () => {
                             Externally connected to the ground floor, it includes 2 bedrooms with attached bathrooms and a valley-facing terrace sit-out accessible from both rooms—perfect for relaxing with scenic views.
                         </p>
                         <div className="flex items-center gap-4">
-                            <Image
+                            {/* <Image
                                 src="/img/signature-dark.svg"
                                 alt="Signature"
                                 width={100}
                                 height={50}
                                 className="img h-auto w-auto"
-                            />
+                            /> */}
                             <div>
                                 <div className="font-semibold text-lg text-[#14100c]">Pratik Patil</div>
                                 <div className="text-sm text-gray-500">Owner</div>

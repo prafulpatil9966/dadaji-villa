@@ -52,7 +52,7 @@ const HeroSection = () => {
                             href="#rooms"
                             className="inline-block bg-white text-black py-2 px-6 rounded-full font-medium hover:bg-gray-300 transition"
                         >
-                            Rooms & Suites
+                            Rooms & Villa
                         </a>
                     </div>
                 </motion.div>

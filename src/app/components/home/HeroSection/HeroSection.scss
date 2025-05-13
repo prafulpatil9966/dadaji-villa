@@ -1,0 +1,33 @@
+.hero-section-container {
+    overflow-x: hidden;
+    .hero-section-button {
+      position: relative; // Required for ::after to position absolutely inside
+      overflow: hidden; // Ensures the animation doesn't overflow
+      z-index: 1;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        width: 0;
+        height: 100%;
+        background: #fff;
+        transition: all 0.3s ease;
+        z-index: -1; // Ensure it appears behind the text
+      }
+  
+      &:hover::after {
+        width: 100%;
+        left: 0;
+        -webkit-transition: width 0.3s ease;
+        transition: width 0.3s ease;
+      }
+  
+      // Optional: Text color change on hover
+      &:hover {
+        color: #000; // adjust based on background
+      }
+    }
+  }
+  

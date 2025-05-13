@@ -30,7 +30,7 @@ export default function ScrollProgressCircle() {
         >
             <div
                 onClick={scrollToTop}
-                className="relative cursor-pointer w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center"
+                className="relative cursor-pointer w-12 h-12 bg-transparent rounded-full flex items-center justify-center"
             >
                 {/* Arrow in center */}
                 <IoIosArrowUp  className="text-[#91765a] absolute z-10" />

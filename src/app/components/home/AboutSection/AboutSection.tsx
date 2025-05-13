@@ -6,7 +6,7 @@ import './AboutSection.scss'
 
 const AboutSection = () => {
     return (
-        <section className="home-about-section pt-30 pb-40 bg-[#f5eee7]" id="about">
+        <section className="home-about-section py-30 md:pb-40  bg-[#f5eee7]" id="about">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left Column */}
@@ -64,7 +64,7 @@ const AboutSection = () => {
                                     // width={600}
                                     // height={400}
                                     className="home-about-img" />
-                                <div className="home-about-text-circle rotate-circle" id="circle">
+                                <div className="home-about-text-circle rotate-circle hidden md:block" id="circle">
                                     <svg
                                         version="1.1"
                                         xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const handleResize = () => setIsMobileView(mediaQuery.matches);
+        handleResize(); // set initial
+        mediaQuery.addEventListener('change', handleResize);
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleResize);
+        };
+    }, []);
+
+
     return (
         <div className="bg-[#f5eee7] text-black">
             {/* Banner Header */}
@@ -10,7 +25,7 @@ const Contact = () => {
                 className="relative h-[60vh] bg-cover bg-fixed flex items-center justify-center"
                 style={{
                     backgroundImage: "url('/contact-header.jpg')",
-                    backgroundPosition: 'center 20%',
+                    backgroundPosition: isMobileView ? "9% 0%": "center 20%",
                 }}
             >
                 <div className="absolute inset-0 bg-black/60" />
@@ -25,7 +40,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Section */}
-            <section className="py-20 px-4">
+            <section className="py-10 md:py-15 lg:py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 mb-20">
                         {/* Contact Info */}

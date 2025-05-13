@@ -29,17 +29,17 @@ const WhyChooseUS = () => {
         visible: { opacity: 1, y: 0 },
     };
     return (
-        <section className="why-choose-us-section py-16 md:py-0 sm:py-0">
+        <section className="why-choose-us-section py-16 md:py-16 sm:py-16">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-0">Hotel Facilities</div>
                     <h2 className="why-choose-us-section-heading text-[40px] font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                     {facilities.map((facility, index) => (
                         <motion.div
                             key={index}
-                            className="why-choose-us-icon-div p-6 border rounded-2xl shadow hover:shadow-lg transition duration-300 bg-white relative"
+                            className="why-choose-us-icon-div group hover:bg-white p-6 border rounded-2xl shadow hover:shadow-lg transition duration-300 bg-white relative"
                             variants={itemVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -50,7 +50,7 @@ const WhyChooseUS = () => {
                                 {facility.icon}
                             </div>
                             <div className="why-choose-us-icon mb-4">{facility.icon}</div>
-                            <h5 className="text-lg font-semibold mb-2">{facility.title}</h5>
+                            <h5 className="why-choose-title text-lg font-semibold mb-2 text-[#14100c] group-hover:text-[#91765a] transition-colors">{facility.title}</h5>
                             <p className="text-sm text-gray-600">{facility.description}</p>
                         </motion.div>
                     ))}

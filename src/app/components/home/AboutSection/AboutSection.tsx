@@ -6,7 +6,7 @@ import './AboutSection.scss'
 
 const AboutSection = () => {
     return (
-        <section className="home-about-section py-20 bg-[#f5eee7]" id="about">
+        <section className="home-about-section pt-30 pb-40 bg-[#f5eee7]" id="about">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left Column */}
@@ -64,6 +64,36 @@ const AboutSection = () => {
                                     // width={600}
                                     // height={400}
                                     className="home-about-img" />
+                                <div className="home-about-text-circle rotate-circle" id="circle">
+                                    <svg
+                                        version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                                        x="0px"
+                                        y="0px"
+                                        width="300px"
+                                        height="300px"
+                                        viewBox="0 0 300 300"
+                                        xmlSpace="preserve"
+                                    >
+                                        <defs>
+                                            <path
+                                                id="circlePath"
+                                                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0"
+                                            />
+                                        </defs>
+                                        <circle cx="150" cy="100" r="75" fill="none" />
+                                        <g>
+                                            <use xlinkHref="#circlePath" fill="none" />
+                                            <text fill="#91765a">
+                                                <textPath xlinkHref="#circlePath">
+                                                    . a unit of . The Dadaji Villa
+                                                </textPath>
+                                            </text>
+                                        </g>
+                                    </svg>
+                                </div>
+
                             </div>
                         </div>
 

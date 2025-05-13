@@ -1,10 +1,11 @@
 .home-about-section {
-    .home-about-subtext{
+    .home-about-subtext {
         font-family: 'Outfit', sans-serif;
         font-size: 15px;
         font-weight: 300;
         line-height: 1.75em;
     }
+
     .home-about-img-div {
         .home-about-inner-img-div {
             padding: 0 20px 20px 0px;
@@ -31,6 +32,35 @@
                     transform: scale(0.95);
                 }
             }
+
+            .home-about-text-circle {
+                position: absolute;
+                right: -150px;
+                bottom: -150px;
+                z-index: 2;
+            }
+            #circle text{
+                font-family: Outfit, sans-serif;
+                    font-size: 12px;
+                    font-weight: 700;
+                    letter-spacing: 6.3px;
+                    text-transform: uppercase;
+            }
+
+            .rotate-circle svg {
+                animation: spin 20s linear infinite;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
         }
     }
 }

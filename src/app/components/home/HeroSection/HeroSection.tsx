@@ -1,19 +1,25 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './HeroSection.scss'
+import HeroButton from '../../global-ui/HeroButton/HeroButton';
 
 const HeroSection = () => {
     const [isClient, setIsClient] = useState(false);
 
+
     useEffect(() => setIsClient(true), []);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    console.log(videoRef);
+
 
     return (
         <header className="hero-section-container relative w-full h-screen overflow-hidden">
             {/* Video background */}
             <div className="absolute inset-0 -z-10">
                 <video
+                    ref={videoRef}
                     className="w-full h-full object-cover"
                     autoPlay
                     loop
@@ -48,14 +54,7 @@ const HeroSection = () => {
                     <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                         A Unique Mountain Villa
                     </h1>
-                    <div className="mt-10">
-                        <a
-                            href="#rooms"
-                            className="hero-section-button font-bold bg-transparent text-[#fff] px-[25px] py-[15px] m-0 relative text-[12px] border-[1px] border-[solid] border-[#fff] uppercase tracking-[1px]"
-                        >
-                            Rooms & Villa
-                        </a>
-                    </div>
+                    <HeroButton href="#rooms">Rooms & Villa</HeroButton>
                 </motion.div>
             </div>
 

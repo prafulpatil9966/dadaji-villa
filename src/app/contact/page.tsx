@@ -19,7 +19,7 @@ const Contact = () => {
 
 
     return (
-        <div className="bg-[#f5eee7] text-black">
+        <div className="bg-[#f5eee7] text-black overflow-hidden">
             {/* Banner Header */}
             <div
                 className="relative h-[60vh] bg-cover bg-fixed flex items-center justify-center"
@@ -40,7 +40,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Section */}
-            <section className="py-10 md:py-15 lg:py-20 px-4">
+            <section className="py-10 md:py-15 lg:py-20 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 mb-20">
                         {/* Contact Info */}

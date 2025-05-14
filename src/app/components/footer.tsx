@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-[#14100c] text-white font-outfit">
       {/* Top Section */}
       <div className="py-16 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
           {/* About */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ const Footer = () => {
               Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum
               aliquam justo in sapien rutrum volutpat.
             </p>
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <select
                 onChange={(e) => (window.location.href = e.target.value)}
                 className="bg-transparent border border-white/30 rounded px-3 py-2 text-sm"
@@ -30,7 +30,7 @@ const Footer = () => {
                 <option value="http://duruthemes.com/">English</option>
                 <option value="http://duruthemes.com/">German</option>
               </select>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Explore Links */}

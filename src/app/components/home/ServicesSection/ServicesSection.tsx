@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import HeroButton from '../../global-ui/HeroButton/HeroButton';
 
 const services = [
   {
@@ -58,7 +59,7 @@ const ServicesSecton = () => {
                   alt={service.title}
                   // width={700}
                   // height={400}
-                  className="w-full object-cover h-[400px]"
+                  className="w-full object-cover h-[200px] md:h-[400px] lg:h-[400px]"
                 />
               </Link>
             </motion.div>
@@ -70,15 +71,16 @@ const ServicesSecton = () => {
               viewport={{ once: true }}
               className="md:w-1/2 w-full bg-[#1b1712] flex items-center"
             >
-              <div className="p-8 md:p-12">
+              <div className="pt-4 pb-8 px-0 md:p-12">
                 <h4 className="text-[27px] text-white leading-[1.5em] mt-0 mb-2.5 mx-0 Outfit-700">{service.title}</h4>
                 <p className=" text-[15px] font-light leading-[1.75em] text-[#625c56] mb-[15px] Outfit-300">{service.text}</p>
-                <Link
+                {/* <Link
                   href={service.link}
                   className="inline-block px-6 py-2 border border-white/30 hover:border-[#91765a] hover:text-[#91765a] transition"
                 >
                   {service.button}
-                </Link>
+                </Link> */}
+                <HeroButton href={service.link} className='text-[10px]' >{service.button}</HeroButton>
               </div>
             </motion.div>
           </div>

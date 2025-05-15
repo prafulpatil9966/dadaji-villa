@@ -7,28 +7,28 @@ import HeroButton from '../../global-ui/HeroButton/HeroButton';
 
 const services = [
   {
-    title: 'Balcony Play Area',
-    text: 'Restaurant inilla duiman at elit finibus viverra nec a lacus miss the nesun seneoice misuscipit non sagie the fermen ziverra tristiue duru the iviten onen nivami acsestion augue in the miss artine.',
-    link: '/restaurant',
+    title: 'Dadaji  Villa',
+    text: 'A 4BHK Valley View Villa with upper floor externally connected to ground floor. Ground floor has 2 bedrooms, 1 bathroom, 1 living room, kitchen, verandah with a swing and a garden. Upper floor has 2 bedrooms, 2 attached bathrooms, valley facing terrace sit out next to the bedrooms.',
+    link: '/dadaji-villa',
     image: '/ServiceSection.jpg',
     reverse: false,
-    button: 'Dining With Us',
+    button: 'Explore Villa',
   },
   {
-    title: 'Spa & Wellness',
-    text: 'Wellness inilla duiman at elit finibus viverra nec a lacus miss the nesuna seneoice misuscipit non sagie the fermen ziverra tristiue duru the iviten onen nivami acsestion augue in the miss artine.',
+    title: 'Dadaji Cottage',
+    text: 'A unit of Dadaji Villa,  Valley View Cottage: Cozy 2-bedroom unit with interconnecting rooms — one compact (7×9 ft) and one spacious (11×13 ft) with attached bathroom. Enjoy a private valley-facing backyard lawn.',
     link: '/spa-wellness',
-    image: '/ServiceSection.jpg',
+    image: '/about-header.jpg',
     reverse: true,
-    button: 'Discover More',
+    button: 'View Details',
   },
   {
-    title: 'Fitness Center',
-    text: 'Fitness center inilla duiman at elit finibus viverra nec a lacus miss nesun seneoice misuscipit non sagie the fermen ziverra tristiue duru the iviten onen nivami acsestion augue in the miss artine.',
+    title: 'Citrine',
+    text: '4BHK Hilltop Villa in Panchgani, Mahabaleshwar: A serene escape with spacious bedrooms, private swimming pool, garden, and bonfire setup. Relax with your loved ones, stargaze under clear skies, and enjoy peaceful moments away from the city buzz.',
     link: '/spa-wellness',
-    image: '/ServiceSection.jpg',
+    image: '/citrine-home.jpg',
     reverse: false,
-    button: 'Learn More',
+    button: 'Enquire Now',
   },
 ];
 
@@ -37,8 +37,8 @@ const ServicesSecton = () => {
     <section className=" overflow-hidden bg-[#1b1712] py-20 text-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <div className="text-sm uppercase tracking-widest text-[#b19777]">What We Do</div>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Our Hotels</h2>
+          <div className="text-sm uppercase tracking-widest text-[#b19777] mt-4">Your Perfect Escape, Your Home Away From Home</div>
         </div>
 
         {services.map((service, index) => (

@@ -5,7 +5,7 @@ import AboutHeader from "./AboutHeader/AboutHeader";
 
 export default function About() {
     return (
-        <div className="mt-[90px] bg-[#f5eee7]">
+        <div className="bg-[#f5eee7]">
           <AboutHeader />
           <WhyChooseUS />
         </div>

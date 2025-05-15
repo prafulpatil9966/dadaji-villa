@@ -24,7 +24,6 @@ const Navbar = () => {
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Rooms', href: '/rooms' },
-    { label: 'Restaurant', href: '/restaurant' },
     { label: 'Contact', href: '/contact' },
   ];
   const menuVariants = {

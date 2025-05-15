@@ -23,6 +23,15 @@ const Navbar = () => {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
+    {
+      label: 'Hotels >',
+      href: '#',
+      children: [
+        { label: 'Dadaji Villa', href: '/dadaji-villa' },
+        { label: 'Dadaji Cottage', href: '/dadaji-cottage' },
+        { label: 'Citrine', href: '/citrine' },
+      ],
+    },
     { label: 'Rooms', href: '/rooms' },
     { label: 'Contact', href: '/contact' },
   ];
@@ -52,19 +61,34 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:hidden lg:flex space-x-6 text-white uppercase text-xs font-bold font-outfit tracking-wide">
+        <ul className="hidden md:hidden lg:flex space-x-6 text-white uppercase text-xs font-bold font-outfit tracking-wide relative">
           {navLinks.map((link, i) => (
-            <li key={i}>
+            <li key={i} className="relative group">
               <Link
                 href={link.href}
-                className={`hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''
-                  }`}
+                className={`hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''}`}
               >
                 {link.label}
               </Link>
+
+              {link.children && (
+                <ul className="absolute p-2 mt-1 left-0 bg-[#1a1713] shadow-lg rounded-md hidden group-hover:block min-w-[200px] z-50">
+                  {link.children.map((sublink, j) => (
+                    <li key={j}>
+                      <Link
+                        href={sublink.href}
+                        className="block px-4 py-2 text-xs text-white hover:text-[#91765a]"
+                      >
+                        {sublink.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
+
 
         {/* Mobile Menu Button */}
         <button

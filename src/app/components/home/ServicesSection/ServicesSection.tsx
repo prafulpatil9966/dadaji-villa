@@ -17,7 +17,7 @@ const services = [
   {
     title: 'Dadaji Cottage',
     text: 'A unit of Dadaji Villa,  Valley View Cottage: Cozy 2-bedroom unit with interconnecting rooms — one compact (7×9 ft) and one spacious (11×13 ft) with attached bathroom. Enjoy a private valley-facing backyard lawn.',
-    link: '/spa-wellness',
+    link: '/dadaji-cottage',
     image: '/about-header.jpg',
     reverse: true,
     button: 'View Details',
@@ -25,7 +25,7 @@ const services = [
   {
     title: 'Citrine',
     text: '4BHK Hilltop Villa in Panchgani, Mahabaleshwar: A serene escape with spacious bedrooms, private swimming pool, garden, and bonfire setup. Relax with your loved ones, stargaze under clear skies, and enjoy peaceful moments away from the city buzz.',
-    link: '/spa-wellness',
+    link: '/citrine',
     image: '/citrine-home.jpg',
     reverse: false,
     button: 'Enquire Now',

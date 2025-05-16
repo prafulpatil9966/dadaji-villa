@@ -12,6 +12,19 @@ const HeroSection = () => {
     useEffect(() => setIsClient(true), []);
     const videoRef = useRef<HTMLVideoElement>(null);
     console.log(videoRef);
+    const scrollToSectionWithOffset = (id: string, offset = 90) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+        });
+    };
+
 
 
     return (
@@ -46,15 +59,20 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
-                    className="text-white max-w-2xl"
+                    className="text-white max-w-3xl"
                 >
-                    <h4 className="text-lg md:text-xl font-light mb-2">
-                        Unparalleled Beauty
-                    </h4>
-                    <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-2 Outfit-700">
                         A Unique Mountain Villa
-                    </h1>
-                    <HeroButton href="#rooms">Rooms & Villa</HeroButton>
+                    </h2>
+                    <h4 className="text-lg md:text-xl font-light Outfit-300">
+                        Nestled in Nature, Designed for Rest - Explore Three Stays, One Soulful Journey.
+                    </h4>
+                    <HeroButton
+                        onClick={(e) => {
+                            e.preventDefault();  // Prevent default anchor jump
+                            scrollToSectionWithOffset('rooms', 90);
+                        }}
+                        href="">Rooms & Villa</HeroButton>
                 </motion.div>
             </div>
 

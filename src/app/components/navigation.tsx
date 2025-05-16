@@ -6,10 +6,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { FiMenu } from 'react-icons/fi';
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hotelDropdownOpen, setHotelDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,9 +24,8 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
     {
-      label: 'Hotels >',
+      label: 'Hotels',
       href: '#',
       children: [
         { label: 'Dadaji Villa', href: '/dadaji-villa' },
@@ -32,6 +33,7 @@ const Navbar = () => {
         { label: 'Citrine', href: '/citrine' },
       ],
     },
+    { label: 'About', href: '/about' },
     { label: 'Rooms', href: '/rooms' },
     { label: 'Contact', href: '/contact' },
   ];
@@ -61,14 +63,14 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:hidden lg:flex space-x-6 text-white uppercase text-xs font-bold font-outfit tracking-wide relative">
+        <ul className="hidden md:hidden lg:flex space-x-6 text-white uppercase text-xs font-bold font-outfit tracking-wide relative items-center">
           {navLinks.map((link, i) => (
             <li key={i} className="relative group">
               <Link
                 href={link.href}
-                className={`hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''}`}
+                className={`flex items-center hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''}`}
               >
-                {link.label}
+                <span> {link.label} </span> {link?.label === "Hotels" && <span> <RiArrowDropDownLine className="w-5 h-5" /> </span>}
               </Link>
 
               {link.children && (
@@ -115,16 +117,46 @@ const Navbar = () => {
             <ul className="space-y-4 text-white uppercase text-sm font-bold font-outfit tracking-wide">
               {navLinks.map((link, i) => (
                 <li key={i}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`block hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''
-                      }`}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.children ? (
+                    <div>
+                      {/* Toggle button for Hotels */}
+                      <button
+                        className="flex items-center justify-between w-full text-left text-white font-bold uppercase"
+                        onClick={() => setHotelDropdownOpen(prev => !prev)}
+                      >
+                        {link.label}
+                        <RiArrowDropDownLine className={`w-6 h-6 transition-transform duration-200 ${hotelDropdownOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {/* Submenu */}
+                      {hotelDropdownOpen && (
+                        <ul className="pl-4 mt-2 space-y-2 ">
+                          {link.children.map((child, j) => (
+                            <li key={j}>
+                              <Link
+                                href={child.href}
+                                onClick={() => setMenuOpen(false)}
+                                className={`block hover:text-[#91765a] ${pathname === child.href ? 'text-[#91765a]' : ''}`}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`block hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
+
             </ul>
           </motion.div>
         )}

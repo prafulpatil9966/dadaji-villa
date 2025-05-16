@@ -31,14 +31,14 @@ export default function AboutHeader() {
             {/* Content */}
             <div className="relative z-10 container mx-auto">
                 <div className="text-left mt-24">
-                    <motion.h1
+                    <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: 'easeOut' }}
                         className="text-white text-4xl md:text-5xl font-bold"
                     >
                         About Us
-                    </motion.h1>
+                    </motion.h2>
                 </div>
             </div>
         </div>

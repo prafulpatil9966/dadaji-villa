@@ -7,7 +7,7 @@ import HeroButton from '../../global-ui/HeroButton/HeroButton';
 
 const services = [
   {
-    title: 'Dadaji  Villa',
+    title: 'Dadaji Villa',
     text: 'A 4BHK Valley View Villa with upper floor externally connected to ground floor. Ground floor has 2 bedrooms, 1 bathroom, 1 living room, kitchen, verandah with a swing and a garden. Upper floor has 2 bedrooms, 2 attached bathrooms, valley facing terrace sit out next to the bedrooms.',
     link: '/dadaji-villa',
     image: '/ServiceSection.jpg',
@@ -34,7 +34,7 @@ const services = [
 
 const ServicesSecton = () => {
   return (
-    <section className=" overflow-hidden bg-[#1b1712] py-20 text-white">
+    <section className=" overflow-hidden bg-[#1b1712] py-20 text-white" id='rooms'>
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Our Hotels</h2>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import './HeroSection.scss'
 import HeroButton from '../../global-ui/HeroButton/HeroButton';
+import { TiArrowDown } from "react-icons/ti";
 
 const HeroSection = () => {
     const [isClient, setIsClient] = useState(false);
@@ -12,13 +13,16 @@ const HeroSection = () => {
     useEffect(() => setIsClient(true), []);
     const videoRef = useRef<HTMLVideoElement>(null);
     console.log(videoRef);
-    const scrollToSectionWithOffset = (id: string, offset = 90) => {
+    const scrollToSectionWithOffset = (id: string) => {
         const element = document.getElementById(id);
         if (!element) return;
-
+    
+        const isMobile = window.innerWidth < 768; // Tailwind's md breakpoint
+        const offset = isMobile ? 70 : 90;
+    
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - offset;
-
+    
         window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth',
@@ -64,13 +68,14 @@ const HeroSection = () => {
                     <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-2 Outfit-700">
                         A Unique Mountain Villa
                     </h2>
-                    <h4 className="text-lg md:text-xl font-light Outfit-300">
+                    <h4 className="text-md py-2 md:text-xl font-light Outfit-300">
                         Nestled in Nature, Designed for Rest - Explore Three Stays, One Soulful Journey.
                     </h4>
                     <HeroButton
                         onClick={(e) => {
                             e.preventDefault();  // Prevent default anchor jump
-                            scrollToSectionWithOffset('rooms', 90);
+                            scrollToSectionWithOffset('rooms');
+                            
                         }}
                         href="">Rooms & Villa</HeroButton>
                 </motion.div>
@@ -78,16 +83,20 @@ const HeroSection = () => {
 
             {/* Scroll-down arrow */}
             {isClient && (
-                <motion.div
-                    initial={{ y: 0 }}
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="absolute bottom-6 w-full flex justify-center"
-                >
-                    <a href="#about" className="text-white text-2xl">
-                        ↓
-                    </a>
-                </motion.div>
+                <div className="absolute bottom-10 w-full text-center z-10">
+                    <motion.a
+                        href="#about"
+                        data-scroll-nav="1"
+                        initial={{ y: 0 }}
+                        animate={{ y: [0, 15, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="hidden md:flex items-center m-auto w-12 h-12 leading-[50px] text-white text-lg border border-white/50 rounded-full hover:border-white relative"
+                    >
+                        <TiArrowDown className="mx-auto text-white text-xl" />
+                    </motion.a>
+
+                </div>
+
             )}
         </header>
     );

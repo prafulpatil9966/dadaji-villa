@@ -7,7 +7,7 @@ import './AboutSection.scss'
 const AboutSection = () => {
     return (
         <>
-            <section className="home-about-section py-30 md:pb-40  bg-[#f5eee7]">
+            <section className="home-about-section py-30 md:pb-40  bg-[#f5eee7]" id="about">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row items-center gap-12">
                         {/* Left Column */}

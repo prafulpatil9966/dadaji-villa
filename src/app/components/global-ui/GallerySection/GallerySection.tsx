@@ -97,7 +97,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
                     <div className="text-center mt-6">
                         <button
                             onClick={handleViewMore}
-                            className="px-6 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition"
+                            className="px-6 py-2 bg-[#b19777] text-white rounded-md hover:bg-gray-700 transition"
                         >
                             View More
                         </button>

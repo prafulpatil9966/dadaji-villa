@@ -44,9 +44,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-white/80">
               {[
                 { name: 'Home', href: '/' },
-                { name: 'Rooms & Suites', href: '/rooms' },
-                { name: 'Restaurant', href: '/restaurant' },
-                { name: 'Spa & Wellness', href: '/spa-wellness' },
+                { name: 'Rooms & Suites', href: '#rooms' },
                 { name: 'About Hotel', href: '/about' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
@@ -68,11 +66,11 @@ const Footer = () => {
           >
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <p className="text-sm text-white/80 mb-4">
-              1616 Broadway NY, New York 10001<br />
-              United States of America
+              Panchgani, Mahabaleshwar, Maharashtra.<br />
+              Pincode - 412805/06
             </p>
-            <p className="text-sm text-white/80">Phone: 855 100 4444</p>
-            <p className="text-sm text-white/80">Email: info@mountainhotel.com</p>
+            <p className="text-sm text-white/80">Phone: 7045228951</p>
+            <p className="text-sm text-white/80">Email: dadajivilla@gmail.com</p>
             <div className="flex items-center space-x-4 mt-4 text-lg">
               <a href="#"><FaInstagram className="hover:text-[#91765a] transition" /></a>
               <a href="#"><FaTwitter className="hover:text-[#91765a] transition" /></a>
@@ -85,11 +83,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="bg-[#0e0c09] py-6">
+      {/* <div className="bg-[#0e0c09] py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm text-white/60">
           © {new Date().getFullYear()} by <a href="#" className="hover:text-[#91765a]">DuruThemes.com</a>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };

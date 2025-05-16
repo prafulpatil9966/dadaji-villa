@@ -14,7 +14,7 @@ const HeroButton: React.FC<ButtonProps> = ({ href, children, className, onClick 
       <a
         href={href}
         onClick={onClick}  // attach onClick here
-        className={`hero-section-button font-bold bg-transparent text-[#fff] px-[15px] py-[10px] md:px-[25px] md:py-[15px] m-0 relative text-[11px] lg:text-[12px] border border-solid border-white uppercase tracking-[1px] ${className}`}
+        className={`hero-section-button font-bold bg-transparent text-[#fff] px-[20px] py-[15px] md:px-[25px] md:py-[15px] m-0 relative text-[11px] lg:text-[12px] border border-solid border-white uppercase tracking-[1px] ${className}`}
       >
         {children}
       </a>

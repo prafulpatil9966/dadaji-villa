@@ -18,16 +18,19 @@ const Contact = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.currentTarget;
-        const formData = new FormData(form);
-        // const data: Record<string, string> = Object.fromEntries(formData.entries()) as Record<string, string>;
+    
+        const getInputValue = (name: string) =>
+            (form.elements.namedItem(name) as HTMLInputElement)?.value || '';
+    
         const data = {
-            name: form.name.value,
-            email: form.email.value,
-            phone: form.phone.value,
-            subject: form.subject.value,
-            message: form.message.value,
+            name: getInputValue('name'),
+            email: getInputValue('email'),
+            phone: getInputValue('phone'),
+            subject: getInputValue('subject'),
+            message: getInputValue('message'),
+            to_email: getInputValue('email'), // Add this if you want the client to receive the email
         };
-
+    
         try {
             await emailjs.send(
                 'service_ftql377',
@@ -35,9 +38,7 @@ const Contact = () => {
                 data,
                 'k06lU5uJJc3A01EmN'
             );
-
-            // sendWhatsAppMessage(data);
-
+    
             alert('Message sent successfully!');
             form.reset();
         } catch (error) {

@@ -55,7 +55,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
 
     return (
         <section className="py-16 bg-white">
-            <div className="container mx-auto py-4">
+            <div className="container px-5 md:px-0 mx-auto py-4">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

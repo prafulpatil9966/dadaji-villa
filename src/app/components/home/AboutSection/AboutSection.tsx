@@ -8,7 +8,7 @@ const AboutSection = () => {
     return (
         <>
             <section className="home-about-section py-30 md:pb-40  bg-[#f5eee7]" id="about">
-                <div className="container mx-auto">
+                <div className="container px-5 md:px-0 mx-auto">
                     <div className="flex flex-col lg:flex-row items-center gap-12">
                         {/* Left Column */}
                         <motion.div

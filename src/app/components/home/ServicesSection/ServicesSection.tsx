@@ -35,7 +35,7 @@ const services = [
 const ServicesSecton = () => {
   return (
     <section className=" overflow-hidden bg-[#1b1712] py-20 text-white" id='rooms'>
-      <div className="container mx-auto">
+      <div className="container px-5 md:px-0 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Our Hotels</h2>
           <div className="text-sm uppercase tracking-widest text-[#b19777] mt-4">Your Perfect Escape, Your Home Away From Home</div>

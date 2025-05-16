@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
 
             <section className="py-10 md:py-15 lg:py-20 px-4 overflow-hidden">
-                <div className="container mx-auto">
+                <div className="container px-5 md:px-0 mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 mb-20">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}

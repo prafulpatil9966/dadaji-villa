@@ -32,7 +32,7 @@ const HeroSection = () => {
 
 
     return (
-        <header className="hero-section-container relative w-full h-screen overflow-hidden">
+        <header className="hero-section-container px-5 md:px-0 relative w-full h-screen overflow-hidden">
             {/* Video background */}
             <div className="absolute inset-0 -z-10">
                 <video

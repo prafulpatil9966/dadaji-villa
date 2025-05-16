@@ -29,7 +29,7 @@ export default function AboutHeader() {
             <div className="absolute inset-0 bg-black opacity-40" />
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto">
+            <div className="relative z-10 container px-5 md:px-0 mx-auto">
                 <div className="text-left mt-24">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}

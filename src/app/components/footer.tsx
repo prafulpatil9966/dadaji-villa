@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-[#14100c] text-white font-outfit">
       {/* Top Section */}
       <div className="py-16 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+        <div className="container mx-auto grid md:grid-cols-3 gap-6">
           {/* About */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       {/* <div className="bg-[#0e0c09] py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center text-sm text-white/60">
+        <div className="container mx-auto text-center text-sm text-white/60">
           © {new Date().getFullYear()} by <a href="#" className="hover:text-[#91765a]">DuruThemes.com</a>
         </div>
       </div> */}

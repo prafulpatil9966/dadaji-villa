@@ -55,7 +55,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
 
     return (
         <section className="py-16 bg-white">
-            <div className="container mx-auto p-4">
+            <div className="container mx-auto py-4">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
                                 {row.map((img, index) => (
                                     <motion.div
                                         key={img.src}
-                                        className={`gallery-item group ${row.length === 2 ? 'tall' : ''}`}
+                                        className={`gallery-item group relative ${row.length === 2 ? 'tall' : ''}`}
                                         style={{ width: img.cols }}
                                         initial="hidden"
                                         whileInView="visible"
@@ -87,7 +87,11 @@ export default function GallerySection({ images }: GallerySectionProps) {
                                             alt={`Gallery image ${index}`}
                                             className="transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full"
                                         />
+
+                                        {/* Black opacity overlay */}
+                                        <div className="absolute inset-0 bg-black opacity-40 pointer-events-none transition-opacity duration-300 group-hover:opacity-20" />
                                     </motion.div>
+
                                 ))}
                             </div>
                         ))}

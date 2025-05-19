@@ -16,13 +16,13 @@ const HeroSection = () => {
     const scrollToSectionWithOffset = (id: string) => {
         const element = document.getElementById(id);
         if (!element) return;
-    
+
         const isMobile = window.innerWidth < 768; // Tailwind's md breakpoint
         const offset = isMobile ? 70 : 90;
-    
+
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - offset;
-    
+
         window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth',
@@ -69,13 +69,13 @@ const HeroSection = () => {
                         A Unique Mountain Villa
                     </h2>
                     <h4 className="text-md py-2 md:text-xl font-light Outfit-300">
-                        Nestled in Nature, Designed for Rest - Explore Three Stays, One Soulful Journey.
+                        Nestled in nature, designed for rest — explore three stays, one soulful journey.
                     </h4>
                     <HeroButton
                         onClick={(e) => {
                             e.preventDefault();  // Prevent default anchor jump
                             scrollToSectionWithOffset('rooms');
-                            
+
                         }}
                         href="">Rooms & Villa</HeroButton>
                 </motion.div>

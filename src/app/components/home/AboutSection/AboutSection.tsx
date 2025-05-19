@@ -57,9 +57,6 @@ const AboutSection = () => {
                         >
                             <div className="home-about-img-div z-10">
                                 <div className="home-about-inner-img-div">
-                                    {/* <Image
-                                    
-                                /> */}
                                     <img src="/aboutimg.jpg"
                                         alt="About"
                                         // width={600}

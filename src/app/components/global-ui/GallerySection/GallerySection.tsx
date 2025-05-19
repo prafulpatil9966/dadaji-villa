@@ -85,11 +85,11 @@ export default function GallerySection({ images }: GallerySectionProps) {
                                         <img
                                             src={img.src}
                                             alt={`Gallery image ${index}`}
-                                            className="transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full"
+                                            className="transform transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full"
                                         />
 
                                         {/* Black opacity overlay */}
-                                        <div className="absolute inset-0 bg-black opacity-40 pointer-events-none transition-opacity duration-300 group-hover:opacity-20" />
+                                        <div className="absolute inset-0 bg-black opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-20" />
                                     </motion.div>
 
                                 ))}

@@ -24,7 +24,7 @@ const DadajiCottage = () => {
         { src: "/dadaji-cottage/dadaji-cottage-img-2.jpg", cols: "50%" },
         { src: "/dadaji-cottage/dadaji-cottage-img-3.jpg", cols: "50%" },
         { src: "/dadaji-cottage/dadaji-cottage-img-6.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-7.jpg", cols: "30%" },
+        // { src: "/dadaji-cottage/dadaji-cottage-img-7.jpg", cols: "30%" },
         // { src: "/dadaji-cottage/dadaji-cottage-img-8.jpg", cols: "30%" },
         // { src: "/dadaji-cottage/dadaji-cottage-img-9.jpg", cols: "50%" },
     ];

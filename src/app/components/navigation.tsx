@@ -25,7 +25,6 @@ const Navbar = () => {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    // { label: 'Rooms', href: '/rooms' },
     { label: 'Contact', href: '/contact' },
     {
       label: 'Hotels',

@@ -3,9 +3,18 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Image from 'next/image';
+import { Autoplay } from 'swiper/modules';
+
 
 const testimonials = [
+    {
+        rating: 5,
+        title: 'Peaceful Stay Amid Nature!',
+        text: 'An ideal place to stay if you want to spend time surrounded by nature. We spent hours sitting in the balcony letting the panorama soak in. A very well maintained and hygienic arrangement with delicious food and friendly caretakers. Would definitely visit again.',
+        author: 'Praful Patil',
+        date: '07-09 December',
+        img: '/img/team/2.jpg',
+    },
     {
         rating: 5,
         title: 'Highly recommended!',
@@ -52,7 +61,7 @@ const testimonials = [
 const TestimonialsSection = () => {
     return (
         <section
-            className="relative bg-fixed bg-cover bg-center py-20"
+            className="relative bg-fixed bg-cover bg-center py-10 md:py-20"
             style={{ backgroundImage: "url('/about-header.jpg')" }}
         >
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -65,7 +74,7 @@ const TestimonialsSection = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <Swiper spaceBetween={30} slidesPerView={1} loop autoplay={{ delay: 2000 }}>
+                        <Swiper spaceBetween={30} slidesPerView={1} loop autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[Autoplay]}>
                             {testimonials.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-white shadow-xl">

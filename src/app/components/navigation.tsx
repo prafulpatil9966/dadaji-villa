@@ -24,6 +24,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    // { label: 'Rooms', href: '/rooms' },
+    { label: 'Contact', href: '/contact' },
     {
       label: 'Hotels',
       href: '#',
@@ -33,9 +36,6 @@ const Navbar = () => {
         { label: 'Citrine', href: '/citrine' },
       ],
     },
-    { label: 'About', href: '/about' },
-    { label: 'Rooms', href: '/rooms' },
-    { label: 'Contact', href: '/contact' },
   ];
   const menuVariants = {
     hidden: { opacity: 0, y: -30, scale: 0.95 },

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
+import { useEffect, useState } from 'react';
 
 
 const testimonials = [
@@ -59,10 +60,22 @@ const testimonials = [
 
 
 const TestimonialsSection = () => {
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const handleResize = () => setIsMobileView(mediaQuery.matches);
+        handleResize(); // set initial
+        mediaQuery.addEventListener('change', handleResize);
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleResize);
+        };
+    }, []);
     return (
         <section
             className="relative bg-fixed bg-cover bg-center py-10 md:py-20"
-            style={{ backgroundImage: "url('/about-header.jpg')" }}
+            style={{ backgroundImage: "url('/common/IMG_8436.jpg')", backgroundPosition: isMobileView ? "9% 0%" : "center 80%", }}
         >
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 

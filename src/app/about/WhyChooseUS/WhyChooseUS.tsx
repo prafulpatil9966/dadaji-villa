@@ -32,8 +32,8 @@ const WhyChooseUS = () => {
         <section className="why-choose-us-section py-16 md:py-16 sm:py-16">
             <div className="container px-5 md:px-0 mx-auto">
                 <div className="text-center mb-12">
-                    <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-0">Hotel Facilities</div>
-                    <h2 className="why-choose-us-section-heading text-[40px] font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
+                    <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-2">Hotel Facilities</div>
+                    <h2 className="why-choose-us-section-heading text-3xl md:text-4xl font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                     {facilities.map((facility, index) => (

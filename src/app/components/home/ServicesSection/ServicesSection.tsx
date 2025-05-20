@@ -44,7 +44,7 @@ const ServicesSecton = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row ${service.reverse ? 'md:flex-row-reverse' : ''}`}
+            className={`flex flex-col mt-4 md:flex-row md:mt-0 ${service.reverse ? 'md:flex-row-reverse' : ''} `}
           >
             <motion.div
               initial={{ opacity: 0, x: service.reverse ? 100 : -100 }}

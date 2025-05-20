@@ -5,6 +5,8 @@ import { useEffect, useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { PiPhoneCallThin, PiMailboxThin } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -26,11 +28,13 @@ const Contact = () => {
 
         const data = {
             name: getInputValue('name'),
-            email: getInputValue('email'),
+            // email: getInputValue('email'),
             phone: getInputValue('phone'),
-            subject: getInputValue('subject'),
-            message: getInputValue('message'),
-            to_email: getInputValue('email'), // Add this if you want the client to receive the email
+            property: getInputValue('property'),
+            guests: getInputValue('guests'),
+            dateFrom: getInputValue('dateFrom'),
+            dateTo: getInputValue('dateTo'),
+            to_email: getInputValue('email'), // For client copy, if used in template
         };
 
         try {
@@ -76,7 +80,7 @@ const Contact = () => {
                 </motion.h2>
             </div>
 
-            <section className="py-10 md:py-15 lg:py-20 px-4 overflow-hidden">
+            <section className="py-10 md:py-15 lg:py-20 overflow-hidden">
                 <div className="container px-5 md:px-0 mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 mb-20">
                         <motion.div
@@ -85,43 +89,84 @@ const Contact = () => {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-2xl font-bold mb-4">Mountain Hotel</h3>
-                            <p className="text-sm leading-relaxed mb-6">
+                            <h3 className="text-xl md:text-2xl font-bold mb-4">Mountain Hotel</h3>
+                            <p className="text-sm md:text-[15px] leading-relaxed mb-6 Outfit-400 text-[#625c56]">
                                 Three Unique Stays, One Peaceful Escape — Discover Comfort, Nature,
                                 and Togetherness in Every Villa.
                             </p>
 
-                            <div className="mb-6 flex items-center">
-                                <PiPhoneCallThin className=" text-[#91765a] text-[45px] mr-4" />
-                                <div className="">
-                                    <h4 className="text-[#91765a] font-semibold mb-1">Reservation</h4>
-                                    <a href="tel:7045228951" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
+                            {/* Reservation */}
+                            <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
+                                <PiPhoneCallThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <div>
+                                    <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Reservation</h4>
+                                    <a
+                                        href="tel:7045228951"
+                                        className="text-xl sm:text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block"
+                                    >
                                         7045228951
                                     </a>
                                 </div>
                             </div>
 
-                            <div className="mb-6 flex items-center">
-                                <PiMailboxThin className=" text-[#91765a] text-[45px] mr-4" />
-                                <div className="">
-                                    <h4 className="text-[#91765a] font-semibold mb-1">Email Info</h4>
-                                    <a href="mailto:dadajivilla@gmail.com" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
+                            {/* Email Info */}
+                            <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
+                                <PiMailboxThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <div>
+                                    <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Email Info</h4>
+                                    <a
+                                        href="mailto:dadajivilla@gmail.com"
+                                        className="text-xl sm:text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block"
+                                    >
                                         dadajivilla@gmail.com
                                     </a>
                                 </div>
                             </div>
 
-                            <div className='flex items-center'>
-                                <CiLocationOn className=" text-[#91765a] text-[45px] mr-4" />
-                                <div className="">
-                                    <h4 className="text-[#91765a] font-semibold mb-1">Address</h4>
-                                    <p className="text-sm">
+                            {/* Address */}
+                            <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
+                                <CiLocationOn className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <div>
+                                    <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Address</h4>
+                                    <p className="text-sm md:text-base leading-relaxed">
                                         Panchgani, Mahabaleshwar, Maharashtra.<br />
                                         Pincode - 412805/06
                                     </p>
                                 </div>
                             </div>
+
+                            {/* Social Media */}
+                            <div className="mt-10">
+                                <h3 className="text-xl md:text-2xl font-bold mb-4">Follow Us</h3>
+                                <div className="mt-3 flex space-x-4 items-center">
+                                    <a
+                                        href="https://www.facebook.com/dadajivilla"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"
+                                    >
+                                        <FaFacebookF />
+                                    </a>
+                                    <a
+                                        href="https://x.com/dadajivilla"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"
+                                    >
+                                        <FaXTwitter />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/dadajivilla/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"
+                                    >
+                                        <FaInstagram />
+                                    </a>
+                                </div>
+                            </div>
                         </motion.div>
+
 
                         <motion.form
                             onSubmit={handleSubmit}
@@ -162,9 +207,9 @@ const Contact = () => {
                                         className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                                     >
                                         <option value="">Select Property *</option>
-                                        <option value="villa">Villa</option>
-                                        <option value="apartment">Apartment</option>
-                                        <option value="cottage">Cottage</option>
+                                        <option value="Dadaji Villa">Dadaji Villa</option>
+                                        <option value="Dadaji Cottage">Dadaji Cottage</option>
+                                        <option value="Citrine">Citrine</option>
                                     </select>
                                 </div>
                                 <div className="">
@@ -200,13 +245,16 @@ const Contact = () => {
                                     />
                                 </div>
                             </div>
-                            {/* <textarea
-                                name="message"
-                                rows={4}
-                                placeholder="Message *"
-                                required
-                                className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
-                            /> */}
+                            <div className="">
+                                <p className='text-[#91765a] text-sm mb-2 ml-2'>Message</p>
+                                <textarea
+                                    name="message"
+                                    rows={4}
+                                    placeholder="Message *"
+                                    required
+                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
+                                />
+                            </div>
                             <button
                                 type="submit"
                                 className="mt-5 bg-[#91765a] hover:bg-[#a88f70] transition-all text-white px-6 py-3 rounded-lg font-semibold"

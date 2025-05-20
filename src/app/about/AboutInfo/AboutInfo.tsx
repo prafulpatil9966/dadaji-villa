@@ -33,7 +33,7 @@ export default function AboutInfo() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={fadeInUp}
-                        className="text-4xl font-bold mt-2 mb-6 text-gray-800"
+                        className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-gray-800"
                     >
                         So Many Ways to Unwind
 

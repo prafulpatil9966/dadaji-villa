@@ -27,6 +27,7 @@ const DadajiVilla = () => {
         { src: "/dadaji-gallery/dadaji-gallery-img-7.jpg", cols: "30%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-8.jpg", cols: "30%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-9.jpg", cols: "50%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-10.jpg", cols: "50%" },
     ];
 
     return (

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { PiPhoneCallThin } from "react-icons/pi";
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -18,10 +19,10 @@ const Contact = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.currentTarget;
-    
+
         const getInputValue = (name: string) =>
             (form.elements.namedItem(name) as HTMLInputElement)?.value || '';
-    
+
         const data = {
             name: getInputValue('name'),
             email: getInputValue('email'),
@@ -30,7 +31,7 @@ const Contact = () => {
             message: getInputValue('message'),
             to_email: getInputValue('email'), // Add this if you want the client to receive the email
         };
-    
+
         try {
             await emailjs.send(
                 'service_ftql377',
@@ -38,7 +39,7 @@ const Contact = () => {
                 data,
                 'k06lU5uJJc3A01EmN'
             );
-    
+
             alert('Message sent successfully!');
             form.reset();
         } catch (error) {
@@ -89,16 +90,19 @@ const Contact = () => {
                                 and Togetherness in Every Villa.
                             </p>
 
-                            <div className="mb-6">
-                                <h4 className="text-[#91765a] font-semibold mb-1">Reservation</h4>
-                                <a href="tel:7045228951" className="text-sm hover:text-[#91765a] block">
-                                    7045228951
-                                </a>
+                            <div className="mb-6 flex items-center">
+                                <PiPhoneCallThin className=" text-[#91765a] text-[45px] mr-2" />
+                                <div className="">
+                                    <h4 className="text-[#91765a] font-semibold mb-1">Reservation</h4>
+                                    <a href="tel:7045228951" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
+                                        7045228951
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="mb-6">
                                 <h4 className="text-[#91765a] font-semibold mb-1">Email Info</h4>
-                                <a href="mailto:dadajivilla@gmail.com" className="text-sm hover:text-[#91765a] block">
+                                <a href="mailto:dadajivilla@gmail.com" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
                                     dadajivilla@gmail.com
                                 </a>
                             </div>
@@ -117,7 +121,6 @@ const Contact = () => {
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
                             className="space-y-4"
                         >
                             <h3 className="text-2xl font-bold mb-6">Get in touch</h3>
@@ -126,7 +129,7 @@ const Contact = () => {
                                 name="name"
                                 placeholder="Full Name *"
                                 required
-                                className="w-full px-4 py-3 bg-[#FFF] border border-white/10 rounded-lg text-sm"
+                                className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                             />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <input
@@ -134,29 +137,38 @@ const Contact = () => {
                                     name="email"
                                     placeholder="Email Address *"
                                     required
-                                    className="w-full px-4 py-3 bg-[#FFF] border border-white/10 rounded-lg text-sm"
+                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                                 />
                                 <input
                                     type="text"
                                     name="phone"
                                     placeholder="Phone Number *"
                                     required
-                                    className="w-full px-4 py-3 bg-[#FFF] border border-white/10 rounded-lg text-sm"
+                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                                 />
                             </div>
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject *"
-                                required
-                                className="w-full px-4 py-3 bg-[#FFF] border border-white/10 rounded-lg text-sm"
-                            />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input
+                                    type="date"
+                                    name="dateFrom"
+                                    placeholder="Date From *"
+                                    required
+                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
+                                />
+                                <input
+                                    type="date"
+                                    name="dateTo"
+                                    placeholder="Date To *"
+                                    required
+                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
+                                />
+                            </div>
                             <textarea
                                 name="message"
                                 rows={4}
                                 placeholder="Message *"
                                 required
-                                className="w-full px-4 py-3 bg-[#FFF] border border-white/10 rounded-lg text-sm"
+                                className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                             />
                             <button
                                 type="submit"
@@ -165,6 +177,7 @@ const Contact = () => {
                                 Send Message
                             </button>
                         </motion.form>
+
                     </div>
 
                     <motion.div

@@ -30,12 +30,12 @@ export default function AboutHeader() {
 
             {/* Content */}
             <div className="relative z-10 container px-5 md:px-0 mx-auto">
-                <div className="text-left mt-24">
+                <div className="">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: 'easeOut' }}
-                        className="text-white text-4xl md:text-5xl font-bold"
+                        className="text-white text-4xl md:text-5xl font-bold text-center"
                     >
                         About Us
                     </motion.h2>

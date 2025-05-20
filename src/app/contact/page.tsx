@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { PiPhoneCallThin } from "react-icons/pi";
+import { PiPhoneCallThin, PiMailboxThin } from "react-icons/pi";
+import { CiLocationOn } from "react-icons/ci";
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -91,7 +92,7 @@ const Contact = () => {
                             </p>
 
                             <div className="mb-6 flex items-center">
-                                <PiPhoneCallThin className=" text-[#91765a] text-[45px] mr-2" />
+                                <PiPhoneCallThin className=" text-[#91765a] text-[45px] mr-4" />
                                 <div className="">
                                     <h4 className="text-[#91765a] font-semibold mb-1">Reservation</h4>
                                     <a href="tel:7045228951" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
@@ -100,19 +101,25 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="mb-6">
-                                <h4 className="text-[#91765a] font-semibold mb-1">Email Info</h4>
-                                <a href="mailto:dadajivilla@gmail.com" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
-                                    dadajivilla@gmail.com
-                                </a>
+                            <div className="mb-6 flex items-center">
+                                <PiMailboxThin className=" text-[#91765a] text-[45px] mr-4" />
+                                <div className="">
+                                    <h4 className="text-[#91765a] font-semibold mb-1">Email Info</h4>
+                                    <a href="mailto:dadajivilla@gmail.com" className="text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block">
+                                        dadajivilla@gmail.com
+                                    </a>
+                                </div>
                             </div>
 
-                            <div>
-                                <h4 className="text-[#91765a] font-semibold mb-1">Address</h4>
-                                <p className="text-sm">
-                                    Panchgani, Mahabaleshwar, Maharashtra.<br />
-                                    Pincode - 412805/06
-                                </p>
+                            <div className='flex items-center'>
+                                <CiLocationOn className=" text-[#91765a] text-[45px] mr-4" />
+                                <div className="">
+                                    <h4 className="text-[#91765a] font-semibold mb-1">Address</h4>
+                                    <p className="text-sm">
+                                        Panchgani, Mahabaleshwar, Maharashtra.<br />
+                                        Pincode - 412805/06
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
 
@@ -121,24 +128,21 @@ const Contact = () => {
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="space-y-4"
+                            className="space-y-2"
                         >
                             <h3 className="text-2xl font-bold mb-6">Get in touch</h3>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Full Name *"
-                                required
-                                className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
-                            />
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="">
+                                <p className='text-[#91765a] text-sm mb-2 ml-2'>Name</p>
                                 <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email Address *"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Full Name *"
                                     required
                                     className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                                 />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-1 ">
+                                <p className='text-[#91765a] text-sm mb-2 ml-2'>Phone</p>
                                 <input
                                     type="text"
                                     name="phone"
@@ -147,36 +151,70 @@ const Contact = () => {
                                     className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
                                 />
                             </div>
+
+                            {/* Property and Guests */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input
-                                    type="date"
-                                    name="dateFrom"
-                                    placeholder="Date From *"
-                                    required
-                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
-                                />
-                                <input
-                                    type="date"
-                                    name="dateTo"
-                                    placeholder="Date To *"
-                                    required
-                                    className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
-                                />
+                                <div className="">
+                                    <p className='text-[#91765a] text-sm mb-2 ml-2'>Property for rent</p>
+                                    <select
+                                        name="property"
+                                        required
+                                        className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
+                                    >
+                                        <option value="">Select Property *</option>
+                                        <option value="villa">Villa</option>
+                                        <option value="apartment">Apartment</option>
+                                        <option value="cottage">Cottage</option>
+                                    </select>
+                                </div>
+                                <div className="">
+                                    <p className='text-[#91765a] text-sm mb-2 ml-2'>Number of Guests</p>
+                                    <input
+                                        type="number"
+                                        name="guests"
+                                        placeholder="Maximum 40 guests"
+                                        min={1}
+                                        required
+                                        className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
+                                    />
+                                </div>
                             </div>
-                            <textarea
+                            {/* Date From and To */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="">
+                                    <p className='text-[#91765a] text-sm mb-2 ml-2'>Check In Date</p>
+                                    <input
+                                        type="date"
+                                        name="dateFrom"
+                                        required
+                                        className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
+                                    />
+                                </div>
+                                <div className="">
+                                    <p className='text-[#91765a] text-sm mb-2 ml-2'>Check Out Date</p>
+                                    <input
+                                        type="date"
+                                        name="dateTo"
+                                        required
+                                        className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
+                                    />
+                                </div>
+                            </div>
+                            {/* <textarea
                                 name="message"
                                 rows={4}
                                 placeholder="Message *"
                                 required
                                 className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm"
-                            />
+                            /> */}
                             <button
                                 type="submit"
-                                className="bg-[#91765a] hover:bg-[#a88f70] transition-all text-white px-6 py-3 rounded-lg font-semibold"
+                                className="mt-5 bg-[#91765a] hover:bg-[#a88f70] transition-all text-white px-6 py-3 rounded-lg font-semibold"
                             >
                                 Send Message
                             </button>
                         </motion.form>
+
 
                     </div>
 

@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                         <Swiper spaceBetween={30} slidesPerView={1} loop autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[Autoplay]}>
                             {testimonials.map((item, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className="bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-white shadow-xl">
+                                    <div className="bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-white">
                                         <div className="flex justify-center mb-4">
                                             {Array.from({ length: item.rating }).map((_, i) => (
                                                 <i key={i} className="text-yellow-400 text-xl">★</i>

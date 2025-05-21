@@ -7,9 +7,9 @@ import './AboutSection.scss'
 const AboutSection = () => {
     return (
         <>
-            <section className="home-about-section py-30 md:pb-40  bg-[#f5eee7]" id="about">
+            <section className="home-about-section py-20 md:pb-40 md:pt-30  bg-[#f5eee7]" id="about">
                 <div className="container px-5 md:px-0 mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center gap-12">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
                         {/* Left Column */}
                         <motion.div
                             className="lg:w-1/2 w-full"
@@ -19,7 +19,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                         >
                             <div className="text-sm uppercase text-[#91765a] mb-2">Since 2007</div>
-                            <h2 className="text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Hotel</h2>
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Hotel</h2>
                             <p className='text-[#14100c] font-bold mr-2 mb-1'>
                                 Ground Floor :
                             </p>

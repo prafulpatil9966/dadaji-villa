@@ -16,17 +16,6 @@ export default function AboutInfo() {
         <section className="pt-10 pb-0 md:pt-20">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="text-center">
-                    {/* <motion.div
-                        custom={0}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp}
-                        className="text-lg text-gray-500 mb-6"
-                    >
-                        So Many Ways to Unwind
-                    </motion.div> */}
-
                     <motion.h2
                         custom={1}
                         initial="hidden"

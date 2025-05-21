@@ -38,7 +38,7 @@ const ServicesSecton = () => {
       <div className="container px-5 md:px-0 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Our Hotels</h2>
-          <div className="text-sm uppercase tracking-widest text-[#b19777] mt-4">Your Perfect Escape, Your Home Away From Home</div>
+          <div className="text-xs md:text-sm uppercase tracking-widest text-[#b19777] mt-4">Your Perfect Escape, Your Home Away From Home</div>
         </div>
 
         {services.map((service, index) => (
@@ -72,8 +72,8 @@ const ServicesSecton = () => {
               className="md:w-1/2 w-full bg-[#1b1712] flex items-center"
             >
               <div className="pt-4 pb-8 px-0 md:p-12">
-                <h4 className="text-[27px] text-white leading-[1.5em] mt-0 mb-2.5 mx-0 Outfit-700">{service.title}</h4>
-                <p className=" text-[15px] font-light leading-[1.75em] text-[#625c56] mb-[15px] Outfit-300">{service.text}</p>
+                <h4 className="text-[24px] md:text-[27px] text-white leading-[1.5em] mt-0 mb-2.5 mx-0 Outfit-700">{service.title}</h4>
+                <p className=" text-[14px] md:text-[15px] font-light leading-[1.75em] text-[#625c56] mb-[15px] Outfit-300">{service.text}</p>
                 {/* <Link
                   href={service.link}
                   className="inline-block px-6 py-2 border border-white/30 hover:border-[#91765a] hover:text-[#91765a] transition"

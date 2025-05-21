@@ -1,5 +1,6 @@
 'use client';
 
+import './footer.scss'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaInstagram, FaTwitter, FaYoutube, FaFacebookF, FaPinterest } from 'react-icons/fa';
@@ -40,17 +41,20 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold mb-4">Explore</h3>
+            <h3 className="ml-[5px] text-xl font-semibold mb-4">Explore</h3>
             <ul className="space-y-2 text-sm text-white/80">
               {[
                 { name: 'Home', href: '/' },
-                { name: 'Rooms & Suites', href: '#rooms' },
-                { name: 'About Hotel', href: '/about' },
+                { name: 'About Us', href: '/about' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-[#91765a] transition">
-                    {link.name}
+                <li key={link.href} className="group flex items-center transition-all cursor-pointer w-max">
+                  <span className="footer-hover-span text-[#91765a] opacity-0 group-hover:opacity-100 transition duration-300"></span>
+                  <Link
+                    href={link.href}
+                    className="transition group-hover:translate-x-2 group-hover:text-[#91765a] duration-300"
+                  >
+                    {link.name} 
                   </Link>
                 </li>
               ))}

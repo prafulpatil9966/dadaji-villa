@@ -3,7 +3,7 @@ import './styles/fonts.scss';
 import "./globals.css";
 import Navigation from "./components/navigation";
 import ScrollProgressCircle from "./components/ScrollProgressCircle/ScrollProgressCircle"
-import Footer from "./components/footer";
+import Footer from "./components/Footer/footer";
 import ClientLayout from "./components/ClientLayout";
 
 export const metadata: Metadata = {

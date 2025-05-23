@@ -12,7 +12,6 @@ const HeroSection = () => {
 
     useEffect(() => setIsClient(true), []);
     const videoRef = useRef<HTMLVideoElement>(null);
-    console.log(videoRef);
     const scrollToSectionWithOffset = (id: string) => {
         const element = document.getElementById(id);
         if (!element) return;

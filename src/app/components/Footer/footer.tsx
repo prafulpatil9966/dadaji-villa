@@ -47,6 +47,7 @@ const Footer = () => {
                 { name: 'Home', href: '/' },
                 { name: 'About Us', href: '/about' },
                 { name: 'Contact', href: '/contact' },
+                { name: 'FAQ', href: '/faq' },
               ].map((link) => (
                 <li key={link.href} className="group flex items-center transition-all cursor-pointer w-max">
                   <span className="footer-hover-span text-[#91765a] opacity-0 group-hover:opacity-100 transition duration-300"></span>

@@ -89,7 +89,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
                                         />
 
                                         {/* Black opacity overlay */}
-                                        <div className="absolute inset-0 bg-black opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
+                                        <div className="absolute inset-0 bg-black opacity-0 md:opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
                                     </motion.div>
 
                                 ))}

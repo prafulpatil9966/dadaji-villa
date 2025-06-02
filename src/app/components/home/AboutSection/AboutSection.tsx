@@ -15,7 +15,7 @@ const AboutSection = () => {
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true , amount: 0.5 }}
                         >
                             <div className="text-sm uppercase text-[#91765a] mb-2">Since 2007</div>
                             <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Hotel</h2>
@@ -52,7 +52,7 @@ const AboutSection = () => {
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true , amount: 0.5 }}
                         >
                             <div className="home-about-img-div z-10">
                                 <div className="home-about-inner-img-div">

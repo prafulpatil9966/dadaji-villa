@@ -270,7 +270,7 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                     >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.28619122280074!2d73.817086!3d17.905126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2695e83fb25b9%3A0x90cba834b582d98e!2sDadaji%20Villa!5e0!3m2!1sen!2sin!4v1747031902461!5m2!1sen!2sin"

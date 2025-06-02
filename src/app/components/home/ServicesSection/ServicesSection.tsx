@@ -50,7 +50,7 @@ const ServicesSecton = () => {
               initial={{ opacity: 0, x: service.reverse ? 100 : -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: true , amount: 0.5}}
               className="md:w-1/2 w-full"
             >
               <Link href={service.link}>
@@ -68,7 +68,7 @@ const ServicesSecton = () => {
               initial={{ opacity: 0, x: service.reverse ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true , amount: 0.5 }}
               className="md:w-1/2 w-full bg-[#1b1712] flex items-center"
             >
               <div className="pt-4 pb-8 px-0 md:p-12">

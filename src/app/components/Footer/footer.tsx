@@ -16,7 +16,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{ once: true , amount: 0.5 }}
           >
             <h3 className="text-xl font-semibold mb-4">About Hotel</h3>
             <p className="text-sm text-white/80 mb-4">
@@ -39,7 +39,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true , amount: 0.5 }}
           >
             <h3 className="ml-[5px] text-xl font-semibold mb-4">Explore</h3>
             <ul className="space-y-2 text-sm text-white/80">
@@ -67,7 +67,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
+            viewport={{ once: true , amount: 0.5 }}
           >
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <p className="text-sm text-white/80 mb-4">

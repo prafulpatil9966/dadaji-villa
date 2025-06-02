@@ -20,7 +20,7 @@ export default function AboutInfo() {
                         custom={1}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-gray-800"
                     >
@@ -32,7 +32,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
@@ -42,7 +42,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
@@ -53,7 +53,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >

@@ -85,7 +85,7 @@ const TestimonialsSection = () => {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true , amount: 0.5 }}
                     >
                         <Swiper spaceBetween={30} slidesPerView={1} loop autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[Autoplay]}>
                             {testimonials.map((item, index) => (

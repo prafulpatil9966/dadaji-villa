@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {  FaCar, FaBed, FaWifi } from 'react-icons/fa';
+import { FaCar, FaBed, FaWifi } from 'react-icons/fa';
 import './WhyChooseUS.scss'
 
 
@@ -23,7 +23,7 @@ const WhyChooseUS = () => {
             description: 'Stay connected with our high-speed fibre internet, perfect for work or entertainment.',
         }
     ];
-    
+
     const itemVariants = {
         hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0 },
@@ -31,10 +31,15 @@ const WhyChooseUS = () => {
     return (
         <section className="why-choose-us-section py-16 md:py-16 sm:py-16">
             <div className="container px-5 md:px-0 mx-auto">
-                <div className="text-center mb-12">
+                <motion.div
+                    className="text-center mb-12"
+                    variants={itemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}>
                     <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-2">Hotel Facilities</div>
                     <h2 className="why-choose-us-section-heading text-3xl md:text-4xl font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
-                </div>
+                </motion.div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                     {facilities.map((facility, index) => (
                         <motion.div
@@ -43,8 +48,8 @@ const WhyChooseUS = () => {
                             variants={itemVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
-                            // transition={{ duration: 0.4, delay: index * 0.1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                        // transition={{ duration: 0.4, delay: index * 0.1 }}
                         >
                             <div className="absolute top-4 right-4 text-gray-100 text-6xl opacity-10 pointer-events-none">
                                 {facility.icon}

@@ -5,6 +5,7 @@ import Navigation from "./components/navigation";
 import ScrollProgressCircle from "./components/ScrollProgressCircle/ScrollProgressCircle"
 import Footer from "./components/Footer/footer";
 import ClientLayout from "./components/ClientLayout";
+import InitialLoaderWrapper from "./components/global-ui/InitialLoaderWrapper/InitialLoaderWrapper";
 
 export const metadata: Metadata = {
   title: "Dadaji Villa",
@@ -24,12 +25,15 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <Navigation />
-        <ClientLayout>
-          {children}
-        </ClientLayout>
-        <ScrollProgressCircle />
-        <Footer />
+        <InitialLoaderWrapper>
+          <ClientLayout>
+          <Navigation />
+            {children}
+
+          <ScrollProgressCircle />
+          <Footer />
+          </ClientLayout>
+        </InitialLoaderWrapper>
       </body>
     </html>
   );

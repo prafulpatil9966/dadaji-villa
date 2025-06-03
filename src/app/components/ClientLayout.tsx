@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 // import Loader from "./global-ui/Loader/Loader";
 import PreLoader from "./global-ui/PreLoader/PreLoader";
+import LoadingText from "./global-ui/LoadingText/LoadingText";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
@@ -12,7 +13,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
     useEffect(() => {
         setLoading(true);
-        const timer = setTimeout(() => setLoading(false), 500); // simulate loading time
+        const timer = setTimeout(() => setLoading(false), 1000); // simulate loading time
 
         return () => clearTimeout(timer);
     }, [pathname]);
@@ -20,7 +21,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return (
         <>
             {/* {loading && <Loader />} */}
-            {loading && <PreLoader />}
+            {loading && <LoadingText />}
             {children}
         </>
     );

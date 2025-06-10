@@ -51,7 +51,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
     };
 
     // Optional: chunk the visible images for layout
-    const rowChunks = chunkArray(visibleImages, [3, 2, 3, 3, 3]); // extend as needed
+    const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3]); // extend as needed
 
     return (
         <section className="py-16 bg-white">

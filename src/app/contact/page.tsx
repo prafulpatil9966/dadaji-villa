@@ -266,7 +266,7 @@ const Contact = () => {
 
                     </div>
 
-                    <motion.div
+                    {/* <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
@@ -281,7 +281,7 @@ const Contact = () => {
                             allowFullScreen
                             className="rounded-lg"
                         />
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </section>
         </div>

@@ -74,7 +74,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
                                 {row.map((img, index) => (
                                     <motion.div
                                         key={img.src}
-                                        className={`gallery-item group relative ${row.length === 2 ? 'tall' : ''}`}
+                                        className={`gallery-item group relative ${row.length % 2 === 0 ? 'tall' : ''}`}
                                         style={{ width: img.cols }}
                                         initial="hidden"
                                         whileInView="visible"

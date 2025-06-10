@@ -43,11 +43,11 @@ const HeroSection = () => {
                     playsInline
                 >
                     <source
-                        src="Video/herobanner-video-new.mp4"
+                        src="https://duruthemes.com/demo/html/cappa/mountain.mp4"
                         type="video/mp4"
                     />
                     <source
-                        src="Video/herobanner-video-new.mp4"
+                        src="https://duruthemes.com/demo/html/cappa/mountain.webm"
                         type="video/webm"
                     />
                 </video>

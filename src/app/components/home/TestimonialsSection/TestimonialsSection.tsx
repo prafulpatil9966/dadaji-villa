@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import { useEffect, useState } from 'react';
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 
 
 const testimonials = [
@@ -61,6 +62,8 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
+
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -75,7 +78,8 @@ const TestimonialsSection = () => {
     return (
         <section
             className="relative bg-fixed bg-cover bg-center py-10 md:py-20"
-            style={{ backgroundImage: "url('/common/IMG_8436.jpg')", backgroundPosition: isMobileView ? "9% 0%" : "center 80%", }}
+            style={{ backgroundImage: "url('/common/IMG_8436.jpg')", backgroundPosition: isMobileView ? "9% 0%" : "center 80%", backgroundAttachment: isIOS ? 'scroll' : 'fixed', }}
+
         >
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
@@ -85,7 +89,7 @@ const TestimonialsSection = () => {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true , amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                     >
                         <Swiper spaceBetween={30} slidesPerView={1} loop autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[Autoplay]}>
                             {testimonials.map((item, index) => (

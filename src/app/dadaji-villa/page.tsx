@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import GallerySection from '../components/global-ui/GallerySection/GallerySection';
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 
 const DadajiVilla = () => {
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
+    
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize = () => setIsMobileView(mediaQuery.matches);
@@ -41,6 +44,7 @@ const DadajiVilla = () => {
                 style={{
                     backgroundImage: "url('/contact-header.jpg')",
                     backgroundPosition: isMobileView ? "9% 0%" : "center 20%",
+                    backgroundAttachment: isIOS ? 'scroll' : 'fixed',
                 }}
             >
                 <div className="absolute inset-0 bg-black/60" />

@@ -3,9 +3,11 @@
 import { motion } from 'framer-motion';
 import './AboutHeader.scss'
 import { useEffect, useState } from 'react';
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 
 export default function AboutHeader() {
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -23,6 +25,7 @@ export default function AboutHeader() {
             style={{
                 backgroundImage: "url('/about-header.jpg')",
                 backgroundPosition: isMobileView ? "9% 0%" : "center 50%",
+                backgroundAttachment: isIOS ? 'scroll' : 'fixed',
             }}
         >
             {/* Overlay */}

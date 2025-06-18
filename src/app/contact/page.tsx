@@ -7,9 +7,12 @@ import { PiPhoneCallThin, PiMailboxThin } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
+    
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -53,20 +56,14 @@ const Contact = () => {
         }
     };
 
-    // const sendWhatsAppMessage = (data: Record<string, string>) => {
-    //     const phoneNumber = '918828119966';
-    //     const message = `New Inquiry:%0AName: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0ASubject: ${data.subject}%0AMessage: ${data.message}`;
-    //     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-    //     window.open(whatsappURL, '_blank');
-    // };
-
     return (
         <div className="bg-[#f5eee7] text-black overflow-hidden">
             <div
-                className="relative h-[60vh] bg-cover bg-fixed flex items-center justify-center"
+                className="relative h-[60vh] bg-cover flex items-center justify-center"
                 style={{
                     backgroundImage: "url('/contact-header.jpg')",
                     backgroundPosition: isMobileView ? '9% 0%' : 'center 20%',
+                    backgroundAttachment: isIOS ? 'scroll' : 'fixed',
                 }}
             >
                 <div className="absolute inset-0 bg-black/60" />

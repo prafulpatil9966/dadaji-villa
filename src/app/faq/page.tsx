@@ -1,4 +1,5 @@
 'use client';
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 import { useEffect, useState } from 'react';
 
 // Define the type for a FAQ item
@@ -47,6 +48,8 @@ export default function FaqSection() {
         setOpenIndex(openIndex === index ? null : index);
     };
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
+
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -67,6 +70,7 @@ export default function FaqSection() {
                 style={{
                     backgroundImage: "url('/ServiceSection.jpg')",
                     backgroundPosition: isMobileView ? "9% 0%" : "center 80%",
+                    backgroundAttachment: isIOS ? 'scroll' : 'fixed',
                 }}
             >
                 {/* Overlay */}

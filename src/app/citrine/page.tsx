@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import GallerySection from '../components/global-ui/GallerySection/GallerySection';
+import useDevicePlatform from '@/hooks/useDevicePlatform';
 
 const Citrine = () => {
     const [isMobileView, setIsMobileView] = useState(false);
+    const { isIOS } = useDevicePlatform();
+    
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize = () => setIsMobileView(mediaQuery.matches);
@@ -36,6 +39,7 @@ const Citrine = () => {
                 style={{
                     backgroundImage: "url('/citrine/citrine-img-2.jpg')",
                     backgroundPosition: isMobileView ? "9% 0%" : "center 70%",
+                    backgroundAttachment: isIOS ? 'scroll' : 'fixed',
                 }}
             >
                 <div className="absolute inset-0 bg-black/60" />

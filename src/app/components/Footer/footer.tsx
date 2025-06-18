@@ -4,6 +4,7 @@ import './footer.scss'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaInstagram, FaTwitter, FaYoutube, FaFacebookF, FaPinterest } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true , amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h3 className="text-xl font-semibold mb-4">About Hotel</h3>
             <p className="text-sm text-white/80 mb-4">
@@ -39,7 +40,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true , amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h3 className="ml-[5px] text-xl font-semibold mb-4">Explore</h3>
             <ul className="space-y-2 text-sm text-white/80">
@@ -55,7 +56,7 @@ const Footer = () => {
                     href={link.href}
                     className="transition group-hover:translate-x-2 group-hover:text-[#91765a] duration-300"
                   >
-                    {link.name} 
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -67,7 +68,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true , amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <p className="text-sm text-white/80 mb-4">
@@ -77,22 +78,22 @@ const Footer = () => {
             <p className="text-sm text-white/80">Phone: 7045228951</p>
             <p className="text-sm text-white/80">Email: dadajivilla@gmail.com</p>
             <div className="flex items-center space-x-4 mt-4 text-lg">
-              <a href="#"><FaInstagram className="hover:text-[#91765a] transition" /></a>
-              <a href="#"><FaTwitter className="hover:text-[#91765a] transition" /></a>
-              <a href="#"><FaYoutube className="hover:text-[#91765a] transition" /></a>
-              <a href="#"><FaFacebookF className="hover:text-[#91765a] transition" /></a>
-              <a href="#"><FaPinterest className="hover:text-[#91765a] transition" /></a>
+              <a href="https://www.instagram.com/dadajivilla/"
+                target="_blank"
+                rel="noopener noreferrer"><FaInstagram className="hover:text-[#91765a] transition" />
+              </a>
+              <a href="https://x.com/dadajivilla"
+                target="_blank"
+                rel="noopener noreferrer"><FaXTwitter className="hover:text-[#91765a] transition" />
+              </a>
+              <a href="https://www.facebook.com/dadajivilla"
+                target="_blank"
+                rel="noopener noreferrer"><FaFacebookF className="hover:text-[#91765a] transition" />
+              </a>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom Section */}
-      {/* <div className="bg-[#0e0c09] py-6">
-        <div className="container px-5 md:px-0 mx-auto text-center text-sm text-white/60">
-          © {new Date().getFullYear()} by <a href="#" className="hover:text-[#91765a]">DuruThemes.com</a>
-        </div>
-      </div> */}
     </footer>
   );
 };

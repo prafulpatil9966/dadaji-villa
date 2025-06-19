@@ -85,7 +85,7 @@ const PromoVideo: React.FC = () => {
           <div className="relative w-[800px] h-[450px]" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={handleCloseVideo}
-              className="absolute top-[-20px] right-[-20px] bg-red-500 text-white rounded-full p-2 z-10 cursor-pointer"
+              className="absolute right-[10px] md:top-[-20px] md:right-[-20px] bg-red-500 text-white rounded-full p-2 z-10 cursor-pointer"
             >
               <FaTimes size={20} />
             </button>

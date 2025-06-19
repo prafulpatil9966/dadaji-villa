@@ -53,7 +53,7 @@ const HeroSection = () => {
                 </video>
 
                 {/* Dark overlay (similar to data-overlay-dark="6") */}
-                <div className="absolute inset-0 bg-black opacity-60" />
+                <div className="absolute inset-0 bg-black opacity-50" />
             </div>
 
             {/* Caption text */}

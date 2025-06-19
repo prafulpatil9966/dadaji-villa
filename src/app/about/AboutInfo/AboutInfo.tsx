@@ -13,16 +13,16 @@ const fadeInUp = {
 
 export default function AboutInfo() {
     return (
-        <section className="py-10 pb-0 md:py-20">
+        <section className="py-10 md:py-20">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="text-center">
                     <motion.h2
                         custom={1}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true , amount: 0.5 }}
+                        // viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
-                        className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-gray-800"
+                        className="text-3xl md:text-4xl font-bold mb-6 text-gray-800"
                     >
                         So Many Ways to Unwind
 
@@ -32,7 +32,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true , amount: 0.5 }}
+                        // viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
@@ -42,7 +42,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true , amount: 0.5 }}
+                        // viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
@@ -53,7 +53,7 @@ export default function AboutInfo() {
                         custom={2}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true , amount: 0.5 }}
+                        // viewport={{ once: true , amount: 0.5 }}
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >

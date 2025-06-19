@@ -5,9 +5,11 @@ export default function useDevicePlatform() {
     const [isAndroid, setIsAndroid] = useState(false);
 
     useEffect(() => {
-        const userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
+        if (typeof window === 'undefined') return;
 
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        const userAgent = navigator.userAgent || navigator.vendor;
+
+        if (/iPad|iPhone|iPod/.test(userAgent)) {
             setIsIOS(true);
         } else if (/android/i.test(userAgent)) {
             setIsAndroid(true);

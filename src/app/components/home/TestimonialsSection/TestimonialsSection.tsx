@@ -78,7 +78,7 @@ const TestimonialsSection = () => {
     return (
         <section
             className="relative bg-fixed bg-cover bg-center py-10 md:py-20"
-            style={{ backgroundImage: "url('/common/IMG_8436.jpg')", backgroundPosition: isMobileView ? "9% 0%" : "center 80%", backgroundAttachment: isIOS ? 'scroll' : 'fixed', }}
+            style={{ backgroundImage: "url('/common/hero-img.jpg')", backgroundPosition: isMobileView ? "9% 0%" : "center 80%", backgroundAttachment: isIOS ? 'scroll' : 'fixed', }}
 
         >
             <div className="absolute inset-0 bg-black opacity-50 z-0"></div>

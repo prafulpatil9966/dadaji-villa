@@ -33,7 +33,7 @@ const Navbar = () => {
       children: [
         { label: 'Dadaji Villa', href: '/dadaji-villa' },
         { label: 'Dadaji Cottage', href: '/dadaji-cottage' },
-        { label: 'Citrine', href: '/citrine' },
+        // { label: 'Citrine', href: '/citrine' },
       ],
     },
   ];

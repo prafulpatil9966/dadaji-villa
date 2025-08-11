@@ -29,9 +29,13 @@ interface GallerySectionProps {
     src: string;
     cols: string;
   }[];
+  facilities: {
+    id: number;
+    name: string;
+  }[];
 }
 
-export default function GallerySection({ images }: GallerySectionProps) {
+export default function GallerySection({ images, facilities }: GallerySectionProps) {
   const [visibleCount, setVisibleCount] = useState(3);
   const [isMobile, setIsMobile] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -63,6 +67,9 @@ export default function GallerySection({ images }: GallerySectionProps) {
 
   const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3]);
 
+  // console.log('facilities',facilities);
+
+
   return (
     <section className="py-16 bg-white">
       <div className="container px-5 md:px-0 mx-auto py-4">
@@ -72,7 +79,29 @@ export default function GallerySection({ images }: GallerySectionProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          <p className="text-sm text-gray-500 uppercase tracking-wider">Images</p>
+          {/* Villa Description */}
+          {/* <h3 className="text-3xl font-bold text-gray-800 mb-3">About Villa</h3>
+          <p className="text-gray-600 about-villa-discription mb-6">
+            A beautiful 4BHK valley view villa with the upper floor externally connected to the ground floor.
+            The ground floor features 2 bedrooms, 1 bathroom, 1 living room, kitchen, verandah with a swing,
+            and a lush garden. The upper floor offers 2 bedrooms with attached bathrooms, and a stunning
+            valley-facing terrace sit-out next to the bedrooms.
+          </p> */}
+
+          {/* Facilities */}
+          <h3 className="text-3xl font-bold text-gray-800 mb-7">What We Provide</h3>
+
+          <div className="bg-[#f7f4f0] about-we-provide p-6 rounded-lg shadow-sm text-left mb-12">
+            {/* <h3 className="text-lg font-semibold text-gray-800 mb-3">What We Provide</h3> */}
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 list-disc list-inside text-gray-700 text-sm">
+              {facilities?.map((item) => (
+                <li key={item.id}>{item.name}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* <p className="text-sm text-gray-500 uppercase tracking-wider">Images</p> */}
           <h2 className="text-3xl font-bold text-gray-800">Image Gallery</h2>
         </motion.div>
 
@@ -127,7 +156,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
           <img
             src={selectedImage}
             alt="Selected"
-            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg" 
+            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
           />
         </div>
       )}

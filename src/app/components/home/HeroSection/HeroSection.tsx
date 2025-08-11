@@ -68,7 +68,7 @@ const HeroSection = () => {
                         A Unique Mountain Villa
                     </h2>
                     <h4 className="text-md py-2 md:text-xl font-light Outfit-300">
-                        Nestled in nature, designed for rest — explore three stays, one soulful journey.
+                        Nestled in nature, designed for rest — explore two stays, one soulful journey.
                     </h4>
                     <HeroButton
                         onClick={(e) => {

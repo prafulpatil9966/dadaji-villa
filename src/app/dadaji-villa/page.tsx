@@ -8,7 +8,7 @@ import useDevicePlatform from '@/hooks/useDevicePlatform';
 const DadajiVilla = () => {
     const [isMobileView, setIsMobileView] = useState(false);
     const { isIOS } = useDevicePlatform();
-    
+
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize = () => setIsMobileView(mediaQuery.matches);
@@ -36,6 +36,18 @@ const DadajiVilla = () => {
         { src: "/dadaji-gallery/dadaji-gallery-img-13.jpg", cols: "30%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-14.jpg", cols: "50%" },
     ];
+    const facilities = [
+        { id: 1, name: "Free Wifi" },
+        { id: 2, name: "Secured parking inside the property" },
+        { id: 3, name: "Inverter backup for power loss" },
+        { id: 4, name: "LED television with Tata Sky connection" },
+        { id: 5, name: "24 hours hot water" },
+        { id: 6, name: "Refrigerator / Water Purifier" },
+        { id: 7, name: "CCTV surveillance for security" },
+        { id: 8, name: "Barbeque" },
+        { id: 9, name: "Bonfire" }
+    ];
+
 
     return (
         <div className="bg-[#f5eee7] text-black overflow-hidden">
@@ -57,7 +69,7 @@ const DadajiVilla = () => {
                     Dadaji Villa
                 </motion.h2>
             </div>
-            <GallerySection images={images} />
+            <GallerySection images={images} facilities={facilities} />
         </div>
 
     )

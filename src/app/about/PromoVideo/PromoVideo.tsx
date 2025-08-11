@@ -54,8 +54,8 @@ const PromoVideo: React.FC = () => {
               </motion.span>
             ))}
           </span>
-          <div className="text-lg font-light mt-2">Mountain Hotel</div>
-          <div className="text-4xl font-semibold mt-1">Promotional Video</div>
+          <div className="text-lg text-[#14100c] Outfit-500 mt-2">Mountain Hotel</div>
+          <div className="why-choose-us-section-heading text-3xl md:text-4xl font-bold text-[#14100c] relative leading-[1.25em] Outfit-700 mt-1">Promotional Video</div>
         </motion.div>
 
         <motion.div

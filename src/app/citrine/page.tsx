@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import GallerySection from '../components/global-ui/GallerySection/GallerySection';
 import useDevicePlatform from '@/hooks/useDevicePlatform';
+import GallerySection from '../components/global-ui/GallerySection/GallerySection';
 
 const Citrine = () => {
     const [isMobileView, setIsMobileView] = useState(false);

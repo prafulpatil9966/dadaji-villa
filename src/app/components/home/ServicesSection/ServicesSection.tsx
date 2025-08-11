@@ -22,14 +22,14 @@ const services = [
     reverse: true,
     button: 'View Details',
   },
-  {
-    title: 'Citrine',
-    text: '4BHK Hilltop Villa in Panchgani, Mahabaleshwar: A serene escape with spacious bedrooms, private swimming pool, garden, and bonfire setup. Relax with your loved ones, stargaze under clear skies, and enjoy peaceful moments away from the city buzz.',
-    link: '/citrine',
-    image: '/citrine-home.jpg',
-    reverse: false,
-    button: 'Enquire Now',
-  },
+  // {
+  //   title: 'Citrine',
+  //   text: '4BHK Hilltop Villa in Panchgani, Mahabaleshwar: A serene escape with spacious bedrooms, private swimming pool, garden, and bonfire setup. Relax with your loved ones, stargaze under clear skies, and enjoy peaceful moments away from the city buzz.',
+  //   link: '/citrine',
+  //   image: '/citrine-home.jpg',
+  //   reverse: false,
+  //   button: 'Enquire Now',
+  // },
 ];
 
 const ServicesSecton = () => {
@@ -37,7 +37,7 @@ const ServicesSecton = () => {
     <section className=" overflow-hidden bg-[#1b1712] py-20 text-white" id='rooms'>
       <div className="container px-5 md:px-0 mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Our Hotels</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">PREMIUM VACATION VILLAS</h2>
           <div className="text-xs md:text-sm uppercase tracking-widest text-[#b19777] mt-4">Your Perfect Escape, Your Home Away From Home</div>
         </div>
 

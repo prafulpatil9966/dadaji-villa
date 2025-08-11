@@ -20,7 +20,7 @@ const services = [
     link: '/dadaji-cottage',
     image: '/about-header.jpg',
     reverse: true,
-    button: 'View Details',
+    button: 'Explore Villa',
   },
   // {
   //   title: 'Citrine',

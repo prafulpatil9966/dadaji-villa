@@ -52,7 +52,7 @@ const Citrine = () => {
                     Citrine
                 </motion.h2>
             </div>
-            <GallerySection images={images} />
+            {/* <GallerySection images={images} /> */}
         </div>
 
     )

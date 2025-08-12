@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import './GallerySection.scss';
+import "./GallerySection.scss";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,7 +13,6 @@ const fadeInUp = {
   }),
 };
 
-// Helper function to chunk array
 function chunkArray<T>(arr: T[], sizes: number[]): T[][] {
   const result: T[][] = [];
   let index = 0;
@@ -38,73 +37,83 @@ interface GallerySectionProps {
 export default function GallerySection({ images, facilities }: GallerySectionProps) {
   const [visibleCount, setVisibleCount] = useState(3);
   const [isMobile, setIsMobile] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Handle Esc and Arrow keys
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedImage(null);
+      if (currentIndex !== null) {
+        if (e.key === "Escape") setCurrentIndex(null);
+        if (e.key === "ArrowRight") handleNext();
+        if (e.key === "ArrowLeft") handlePrev();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [currentIndex]);
+
+  const handleViewMore = () => setVisibleCount((prev) => prev + 3);
 
   const visibleImages = isMobile ? images.slice(0, visibleCount) : images;
-
-  const handleViewMore = () => {
-    setVisibleCount((prev) => prev + 3);
-  };
-
   const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3]);
 
-  // console.log('facilities',facilities);
+  // Navigation functions
+  const handleNext = () => {
+    if (currentIndex !== null) {
+      setCurrentIndex((prev) => (prev! + 1) % images.length);
+    }
+  };
 
+  const handlePrev = () => {
+    if (currentIndex !== null) {
+      setCurrentIndex((prev) => (prev! - 1 + images.length) % images.length);
+    }
+  };
+
+  // Swipe handling
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current !== null) {
+      const diff = touchStartX.current - e.changedTouches[0].clientX;
+      if (diff > 50) handleNext(); // swipe left
+      if (diff < -50) handlePrev(); // swipe right
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <section className="py-16 bg-white">
       <div className="container px-5 md:px-0 mx-auto py-4">
+        {/* Facilities */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          {/* Villa Description */}
-          {/* <h3 className="text-3xl font-bold text-gray-800 mb-3">About Villa</h3>
-          <p className="text-gray-600 about-villa-discription mb-6">
-            A beautiful 4BHK valley view villa with the upper floor externally connected to the ground floor.
-            The ground floor features 2 bedrooms, 1 bathroom, 1 living room, kitchen, verandah with a swing,
-            and a lush garden. The upper floor offers 2 bedrooms with attached bathrooms, and a stunning
-            valley-facing terrace sit-out next to the bedrooms.
-          </p> */}
-
-          {/* Facilities */}
           <h3 className="text-3xl font-bold text-gray-800 mb-7">What We Provide</h3>
-
           <div className="bg-[#f7f4f0] about-we-provide p-6 rounded-lg shadow-sm text-left mb-12">
-            {/* <h3 className="text-lg font-semibold text-gray-800 mb-3">What We Provide</h3> */}
-
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 list-disc list-inside text-gray-700 text-sm">
               {facilities?.map((item) => (
                 <li key={item.id}>{item.name}</li>
               ))}
             </ul>
           </div>
-
-          {/* <p className="text-sm text-gray-500 uppercase tracking-wider">Images</p> */}
           <h2 className="text-3xl font-bold text-gray-800">Image Gallery</h2>
         </motion.div>
 
+        {/* Gallery Images */}
         <div className="gallery-wrapper space-y-8 overflow-hidden">
           {rowChunks
             .filter((row) => row.length > 0)
@@ -124,10 +133,9 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
                     <img
                       src={img.src}
                       alt={`Gallery image ${index}`}
-                      onClick={() => setSelectedImage(img.src)}
+                      onClick={() => setCurrentIndex(images.indexOf(img))}
                       className="img-gallery-item transform transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full cursor-pointer"
                     />
-
                     <div className="absolute inset-0 bg-black opacity-0 md:opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
                   </motion.div>
                 ))}
@@ -135,6 +143,7 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
             ))}
         </div>
 
+        {/* View More Button */}
         {isMobile && visibleCount < images.length && (
           <div className="text-center mt-6">
             <button
@@ -147,17 +156,39 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
         )}
       </div>
 
-      {/* Modal for full-size image */}
-      {selectedImage && (
+      {/* Modal with Swipe */}
+      {currentIndex !== null && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setCurrentIndex(null)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <img
-            src={selectedImage}
+            src={images[currentIndex].src}
             alt="Selected"
             className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+            onClick={(e) => e.stopPropagation()} // Prevent closing on image click
           />
+          {/* Optional navigation arrows */}
+          <button
+            className="absolute left-2 text-white text-3xl"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+          >
+            ‹
+          </button>
+          <button
+            className="absolute right-2 text-white text-3xl"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+          >
+            ›
+          </button>
         </div>
       )}
     </section>

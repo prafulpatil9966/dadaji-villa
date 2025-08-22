@@ -70,7 +70,7 @@ export default function MenuTabs() {
     const [activeTab, setActiveTab] = useState<TabKey>("tab-1");
 
     return (
-        <div className="py-20 md:pb-30 md:pt-30 bg-[#f5eee7]">
+        <div className="py-15 md:pb-30 md:pt-30 bg-[#f5eee7]">
             <div className="container mx-auto">
                 {/* Tabs */}
                 <div className="flex flex-wrap justify-center gap-4 mb-10">
@@ -101,10 +101,10 @@ export default function MenuTabs() {
                         {menuContent[activeTab]?.map((item, idx) => (
                             <div key={idx} className="p-4 border-b">
                                 <div className="flex justify-between items-center">
-                                    <h5 className="text-lg font-semibold text-[#14100c]">{item.name}</h5>
-                                    <span className="text-[#91765a] font-bold">{item.price}</span>
+                                    <h5 className="text-base sm:text-lg font-semibold text-[#14100c]">{item.name}</h5>
+                                    <span className="text-sm sm:text-base text-[#91765a] font-bold">{item.price}</span>
                                 </div>
-                                <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
+                                <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.desc}</p>
                             </div>
                         ))}
                     </motion.div>

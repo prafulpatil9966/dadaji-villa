@@ -11,7 +11,7 @@ export default function Home() {
       <AboutSection/>
       <ServicesSecton/>
       <TestimonialsSection/>
-      <MenuTabs/>
+      {/* <MenuTabs/> */}
     </div>
   );
 }

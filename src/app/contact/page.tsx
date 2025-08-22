@@ -88,7 +88,7 @@ const Contact = () => {
                         >
                             <h3 className="text-xl md:text-2xl font-bold mb-4">Mountain Hotel</h3>
                             <p className="text-sm md:text-[15px] leading-relaxed mb-6 Outfit-400 text-[#625c56]">
-                                Three Unique Stays, One Peaceful Escape — Discover Comfort, Nature,
+                                Two Unique Stays, One Peaceful Escape — Discover Comfort, Nature,
                                 and Togetherness in Every Villa.
                             </p>
 
@@ -206,7 +206,6 @@ const Contact = () => {
                                         <option value="">Select Property *</option>
                                         <option value="Dadaji Villa">Dadaji Villa</option>
                                         <option value="Dadaji Cottage">Dadaji Cottage</option>
-                                        <option value="Citrine">Citrine</option>
                                     </select>
                                 </div>
                                 <div className="">

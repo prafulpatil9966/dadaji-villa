@@ -21,8 +21,8 @@ const Footer = () => {
           >
             <h3 className="text-xl font-semibold mb-4">About Hotel</h3>
             <p className="text-sm text-white/80 mb-4">
-              Three Unique Stays, One Peaceful Escape — Discover Comfort, Nature, and Togetherness in Every Villa.
-              Let me know if you'd prefer a more luxurious, family-friendly, or nature-centric tone!
+              Two Unique Stays, One Peaceful Escape — Discover Comfort, Nature, and Togetherness in Each Villa.
+              Let me know if you'd prefer family-friendly or nature-centric tone!
             </p>
             {/* <div className="mt-4">
               <select

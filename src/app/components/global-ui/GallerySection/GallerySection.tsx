@@ -60,6 +60,19 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentIndex]);
 
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (currentIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [currentIndex]);
+
+
   const handleViewMore = () => setVisibleCount((prev) => prev + 3);
 
   const visibleImages = isMobile ? images.slice(0, visibleCount) : images;

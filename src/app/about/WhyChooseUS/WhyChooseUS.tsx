@@ -37,7 +37,7 @@ const WhyChooseUS = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}>
-                    <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-2">Hotel Facilities</div>
+                    <div className="text-xs font-bold text-[#91765a] uppercase relative tracking-[2px] mb-2">Homestay Facilities</div>
                     <h2 className="why-choose-us-section-heading text-3xl md:text-4xl font-bold text-[#14100c] relative leading-[1.25em] mb-[15px] Outfit-700">Why Choose Us</h2>
                 </motion.div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-8 ">

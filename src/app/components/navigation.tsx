@@ -28,7 +28,7 @@ const Navbar = () => {
     { label: 'Contact', href: '/contact' },
     { label: 'menu', href: '/menu' },
     {
-      label: 'Hotels',
+      label: 'Vacation Homes',
       href: '#',
       children: [
         { label: 'Dadaji Villa', href: '/dadaji-villa' },
@@ -70,7 +70,7 @@ const Navbar = () => {
                 href={link.href}
                 className={`flex items-center hover:text-[#91765a] ${pathname === link.href ? 'text-[#91765a]' : ''}`}
               >
-                <span> {link.label} </span> {link?.label === "Hotels" && <span> <RiArrowDropDownLine className="w-5 h-5" /> </span>}
+                <span> {link.label} </span> {link?.label === "Vacation Homes" && <span> <RiArrowDropDownLine className="w-5 h-5" /> </span>}
               </Link>
 
               {link.children && (

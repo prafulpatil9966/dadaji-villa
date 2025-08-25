@@ -18,7 +18,7 @@ const AboutSection = () => {
                             viewport={{ once: true , amount: 0.5 }}
                         >
                             <div className="text-sm uppercase text-[#91765a] mb-2">Since 2007</div>
-                            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Hotel</h2>
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Homestay</h2>
                             <p className='text-[#14100c] font-bold mr-2 mb-1'>
                                 Ground Floor :
                             </p>

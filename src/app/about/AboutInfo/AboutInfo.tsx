@@ -36,7 +36,7 @@ export default function AboutInfo() {
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
-                        DADAJI VILLA and its units in Panchgani, Mahabaleshwar are precisely chosen to be at one of the best locations on the hill station that offers spectacular view and peace. It is an ideal getaway from the urban stress.
+                        DADAJI VILLA and Cottage in Panchgani, Mahabaleshwar are precisely chosen to be at one of the best locations on the hill station that offers spectacular view and peace. It is an ideal getaway from the urban stress.
                     </motion.p>
                     <motion.p
                         custom={2}
@@ -57,7 +57,7 @@ export default function AboutInfo() {
                         variants={fadeInUp}
                         className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2"
                     >
-                        DADAJI VILLA and its units in Panchgani, Mahabaleshwar welcomes you to be our guests and make cherished memories with your loved ones while we take care of you.
+                        DADAJI VILLA and Cottage in Panchgani, Mahabaleshwar welcomes you to be our guests and make cherished memories with your loved ones while we take care of you.
                     </motion.p>
                 </div>
             </div>

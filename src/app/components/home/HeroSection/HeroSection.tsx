@@ -53,7 +53,7 @@ const HeroSection = () => {
                 </video>
                 {/* <img src="/common/hero-img.jpg" className='w-full h-full object-cover' /> */}
                 {/* Dark overlay (similar to data-overlay-dark="6") */}
-                <div className="absolute inset-0 bg-black opacity-50" />
+                <div className="absolute inset-0 bg-black opacity-70" />
             </div>
 
             {/* Caption text */}

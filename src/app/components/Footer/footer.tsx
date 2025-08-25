@@ -19,7 +19,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h3 className="text-xl font-semibold mb-4">About Hotel</h3>
+            <h3 className="text-xl font-semibold mb-4">About Homestay</h3>
             <p className="text-sm text-white/80 mb-4">
               Two Unique Stays, One Peaceful Escape — Discover Comfort, Nature, and Togetherness in Each Villa.
               Let me know if you'd prefer family-friendly or nature-centric tone!

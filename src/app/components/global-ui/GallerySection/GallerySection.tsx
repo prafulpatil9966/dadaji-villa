@@ -62,15 +62,26 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
 
   // Prevent background scroll when modal is open
   useEffect(() => {
-    if (currentIndex !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+  if (currentIndex !== null) {
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.overflow = "hidden";
+  } else {
+    const scrollY = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.overflow = "";
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [currentIndex]);
+  }
+}, [currentIndex]);
+
 
 
   const handleViewMore = () => setVisibleCount((prev) => prev + 3);
@@ -106,8 +117,8 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container px-5 md:px-0 mx-auto py-4">
+    <section className="py-12 md:py-16 bg-white">
+      <div className="container px-5 md:px-0 mx-auto">
         {/* Facilities */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

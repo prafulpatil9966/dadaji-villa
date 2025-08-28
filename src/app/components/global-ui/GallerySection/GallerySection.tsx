@@ -1,7 +1,14 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+// Optional plugins
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+
 import "./GallerySection.scss";
 
 const fadeInUp = {
@@ -38,7 +45,6 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
   const [visibleCount, setVisibleCount] = useState(3);
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -47,74 +53,10 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle Esc and Arrow keys
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (currentIndex !== null) {
-        if (e.key === "Escape") setCurrentIndex(null);
-        if (e.key === "ArrowRight") handleNext();
-        if (e.key === "ArrowLeft") handlePrev();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex]);
-
-  // Prevent background scroll when modal is open
-  useEffect(() => {
-  if (currentIndex !== null) {
-    const scrollY = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.overflow = "hidden";
-  } else {
-    const scrollY = document.body.style.top;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.overflow = "";
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
-    }
-  }
-}, [currentIndex]);
-
-
-
   const handleViewMore = () => setVisibleCount((prev) => prev + 3);
 
   const visibleImages = isMobile ? images.slice(0, visibleCount) : images;
   const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3]);
-
-  // Navigation functions
-  const handleNext = () => {
-    if (currentIndex !== null) {
-      setCurrentIndex((prev) => (prev! + 1) % images.length);
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentIndex !== null) {
-      setCurrentIndex((prev) => (prev! - 1 + images.length) % images.length);
-    }
-  };
-
-  // Swipe handling
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current !== null) {
-      const diff = touchStartX.current - e.changedTouches[0].clientX;
-      if (diff > 50) handleNext(); // swipe left
-      if (diff < -50) handlePrev(); // swipe right
-    }
-    touchStartX.current = null;
-  };
 
   return (
     <section className="py-12 md:py-16 bg-white">
@@ -180,40 +122,15 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
         )}
       </div>
 
-      {/* Modal with Swipe */}
+      {/* Lightbox Plugin */}
       {currentIndex !== null && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={() => setCurrentIndex(null)}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <img
-            src={images[currentIndex].src}
-            alt="Selected"
-            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
-            onClick={(e) => e.stopPropagation()} // Prevent closing on image click
-          />
-          {/* Optional navigation arrows */}
-          <button
-            className="absolute left-2 text-white text-3xl"
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrev();
-            }}
-          >
-            ‹
-          </button>
-          <button
-            className="absolute right-2 text-white text-3xl"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleNext();
-            }}
-          >
-            ›
-          </button>
-        </div>
+        <Lightbox
+          open={currentIndex !== null}
+          index={currentIndex}
+          close={() => setCurrentIndex(null)}
+          slides={images.map((img) => ({ src: img.src }))}
+          plugins={[Zoom, Fullscreen]}
+        />
       )}
     </section>
   );

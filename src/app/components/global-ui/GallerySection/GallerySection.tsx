@@ -80,7 +80,7 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
         </motion.div>
 
         {/* Gallery Images */}
-        <div className="gallery-wrapper space-y-8 overflow-hidden">
+        <div className="gallery-wrapper space-y-[28px] overflow-hidden">
           {rowChunks
             .filter((row) => row.length > 0)
             .map((row, rowIndex) => (

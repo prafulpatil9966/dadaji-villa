@@ -21,20 +21,20 @@ const DadajiCottage = () => {
     }, []);
 
     const images = [
-        { src: "/dadaji-cottage/dadaji-cottage-img-1.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-4.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-5.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-2.jpg", cols: "50%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-3.jpg", cols: "50%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-6.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-7.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-8.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-9.jpg", cols: "50%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-10.jpg", cols: "50%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-11.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-12.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-13.jpg", cols: "30%" },
-        { src: "/dadaji-cottage/dadaji-cottage-img-14.jpg", cols: "50%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-1.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-4.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-5.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-2.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-3.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-6.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-7.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-8.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-9.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-10.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-11.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-12.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-13.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-14.jpg", cols: "49%" },
     ];
 
     const facilities = [

@@ -12,9 +12,12 @@ import useDevicePlatform from '@/hooks/useDevicePlatform';
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
     const { isIOS } = useDevicePlatform();
+    const [todayDate, setTodayDate] = useState("");
     
 
     useEffect(() => {
+        const currentDate = new Date().toISOString().split("T")[0];
+        setTodayDate(currentDate);
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize = () => setIsMobileView(mediaQuery.matches);
         handleResize();
@@ -228,6 +231,7 @@ const Contact = () => {
                                         type="date"
                                         name="dateFrom"
                                         required
+                                        min={todayDate}
                                         className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
                                     />
                                 </div>
@@ -237,6 +241,7 @@ const Contact = () => {
                                         type="date"
                                         name="dateTo"
                                         required
+                                        min={todayDate}
                                         className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
                                     />
                                 </div>

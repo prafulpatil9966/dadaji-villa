@@ -33,9 +33,9 @@ const PromoVideo: React.FC = () => {
 
   return (
     <section
-      className="relative bg-fixed bg-cover bg-center"
+      className="relative bg-fixed bg-cover bg-center py-20"
       style={{
-        backgroundImage: `url('/common/IMG_8436.jpg')`,
+        backgroundImage: `url('/common/hero-img.jpg')`,
         backgroundPosition: isMobileView ? "9% 0%" : "center 90%",
         backgroundAttachment: isIOS ? 'scroll' : 'fixed',
       }}

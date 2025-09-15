@@ -21,18 +21,9 @@ const Footer = () => {
           >
             <h3 className="text-xl font-semibold mb-4">About Homestay</h3>
             <p className="text-sm text-white/80 mb-4">
-              Two Unique Stays, One Peaceful Escape — Discover Comfort, Nature, and Togetherness in Each Villa.
+              Two Unique Stays, One Peaceful Escape — Discover Comfort, Nature, and Togetherness in Each Vacation Home.
               Let me know if you'd prefer family-friendly or nature-centric tone!
             </p>
-            {/* <div className="mt-4">
-              <select
-                onChange={(e) => (window.location.href = e.target.value)}
-                className="bg-transparent border border-white/30 rounded px-3 py-2 text-sm"
-              >
-                <option value="http://duruthemes.com/">English</option>
-                <option value="http://duruthemes.com/">German</option>
-              </select>
-            </div> */}
           </motion.div>
 
           {/* Explore Links */}

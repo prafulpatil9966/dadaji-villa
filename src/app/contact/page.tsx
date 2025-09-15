@@ -8,12 +8,15 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import useDevicePlatform from '@/hooks/useDevicePlatform';
+import OkPopup from '../components/global-ui/OkPopup/OkPopup';
+import ErrorPopup from '../components/global-ui/ErrorPopup/ErrorPopup';
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
     const { isIOS } = useDevicePlatform();
     const [todayDate, setTodayDate] = useState("");
-    
+    const [popupOpen, setPopupOpen] = useState(false);
+    const [errorPopup, setErrorPopup] = useState(true);
 
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];
@@ -43,6 +46,7 @@ const Contact = () => {
             to_email: getInputValue('email'), // For client copy, if used in template
         };
 
+        debugger
         try {
             await emailjs.send(
                 'service_ftql377',
@@ -51,11 +55,13 @@ const Contact = () => {
                 'k06lU5uJJc3A01EmN'
             );
 
-            alert('Message sent successfully!');
+            // alert('Message sent successfully!');
+            setPopupOpen(true)
             form.reset();
         } catch (error) {
             console.error('Email send failed:', error);
-            alert('Failed to send message. Please try again later.');
+            setErrorPopup(true)
+            // alert('Failed to send message. Please try again later.');
         }
     };
 
@@ -230,7 +236,6 @@ const Contact = () => {
                                     <input
                                         type="date"
                                         name="dateFrom"
-                                        required
                                         min={todayDate}
                                         className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
                                     />
@@ -240,7 +245,6 @@ const Contact = () => {
                                     <input
                                         type="date"
                                         name="dateTo"
-                                        required
                                         min={todayDate}
                                         className="w-full px-4 py-3 bg-[#FFF] text-[#625c56] border border-white/10 rounded-lg text-sm cursor-pointer"
                                     />
@@ -283,6 +287,18 @@ const Contact = () => {
                             className="rounded-lg"
                         />
                     </motion.div> */}
+                    {popupOpen && (
+                        <OkPopup
+                            content={"Message sent successfully! 🎉"}
+                            onClose={() => setPopupOpen(false)}
+                        />
+                    )}
+                    {errorPopup && (
+                        <ErrorPopup
+                            content={"Failed to send message. Please try again!"}
+                            onClose={() => setErrorPopup(false)}
+                        />
+                    )}
                 </div>
             </section>
         </div>

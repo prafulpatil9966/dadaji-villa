@@ -16,7 +16,7 @@ const Contact = () => {
     const { isIOS } = useDevicePlatform();
     const [todayDate, setTodayDate] = useState("");
     const [popupOpen, setPopupOpen] = useState(false);
-    const [errorPopup, setErrorPopup] = useState(true);
+    const [errorPopup, setErrorPopup] = useState(false);
 
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];

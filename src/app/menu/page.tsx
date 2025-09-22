@@ -27,8 +27,8 @@ const menu = () => {
             <div
                 className="relative h-[60vh] bg-cover bg-fixed flex items-center justify-center"
                 style={{
-                    backgroundImage: "url('/common/menu-header-img.jpg')", // replace with your actual image
-                    backgroundPosition: isMobileView ? "30% 0%" : "center 150%",
+                    backgroundImage: "url('/common/menu-bg.jpg')", // replace with your actual image
+                    backgroundPosition: isMobileView ? "30% 0%" : "center 0%",
                     backgroundAttachment: isIOS ? 'scroll' : 'fixed',
                 }}
             >

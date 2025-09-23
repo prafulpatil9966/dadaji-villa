@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import useDevicePlatform from '@/hooks/useDevicePlatform';
 import OkPopup from '../components/global-ui/OkPopup/OkPopup';
 import ErrorPopup from '../components/global-ui/ErrorPopup/ErrorPopup';
+import WeatherWidget from '../components/WeatherWidget/WeatherWidget';
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -88,7 +89,7 @@ const Contact = () => {
 
             <section className="py-10 md:py-15 lg:py-20 overflow-hidden">
                 <div className="container px-5 md:px-0 mx-auto">
-                    <div className="grid lg:grid-cols-2 gap-16 mb-20">
+                    <div className="grid lg:grid-cols-2 gap-16 mb-10">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -270,6 +271,10 @@ const Contact = () => {
 
 
                     </div>
+                    <section className="">
+                        <h3 className="text-xl md:text-2xl font-bold mb-4">Before You Pack: Here’s Today’s Weather at Dadaji Villa</h3>
+                        <WeatherWidget />
+                    </section>
 
                     {/* <motion.div
                         initial={{ opacity: 0, y: 30 }}

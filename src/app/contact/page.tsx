@@ -11,6 +11,7 @@ import useDevicePlatform from '@/hooks/useDevicePlatform';
 import OkPopup from '../components/global-ui/OkPopup/OkPopup';
 import ErrorPopup from '../components/global-ui/ErrorPopup/ErrorPopup';
 import WeatherWidget from '../components/WeatherWidget/WeatherWidget';
+import FunSection from '../components/home/FunSection/FunSection';
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -271,10 +272,10 @@ const Contact = () => {
 
 
                     </div>
-                    <section className="">
+                    {/* <section className="">
                         <h3 className="text-xl md:text-2xl font-bold mb-4">Before You Pack: Here’s Today’s Weather at Dadaji Villa</h3>
                         <WeatherWidget />
-                    </section>
+                    </section> */}
 
                     {/* <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -306,6 +307,7 @@ const Contact = () => {
                     )}
                 </div>
             </section>
+            <FunSection />
         </div>
     );
 };

@@ -7,9 +7,14 @@ interface WeatherData {
   weather?: { description: string; icon: string }[];
   wind?: { speed: number };
   name?: string;
+  cod?: number;
 }
 
-export default function WeatherWidget() {
+interface WeatherWidgetProps {
+  onWeatherChange?: (condition: "sunny" | "cloudy" | "rainy" | "other") => void;
+}
+
+export default function WeatherWidget({ onWeatherChange }: WeatherWidgetProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [location, setLocation] = useState("");
@@ -27,7 +32,7 @@ export default function WeatherWidget() {
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
       );
-      const data = await res.json();
+      const data: WeatherData = await res.json();
       if (data.cod !== 200) {
         console.error("Weather API error:", data);
         setWeather(null);
@@ -47,7 +52,7 @@ export default function WeatherWidget() {
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
       );
-      const data = await res.json();
+      const data: WeatherData = await res.json();
       if (data.cod !== 200) {
         console.error("Weather API error:", data);
         setWeather(null);
@@ -64,14 +69,30 @@ export default function WeatherWidget() {
   useEffect(() => {
     fetchWeatherByCoords(LAT, LON);
   }, []);
-  
 
   useEffect(() => {
-    if (searchCity) {
-      fetchWeatherByCity(searchCity);
-    }
+    if (searchCity) fetchWeatherByCity(searchCity);
   }, [searchCity]);
-  
+
+  // 🔥 Notify parent whenever weather changes
+  useEffect(() => {
+    if (weather?.weather && weather.weather.length > 0) {
+      debugger
+      const mainCondition = weather.weather[0].description.toLowerCase();
+
+      let condition: "sunny" | "cloudy" | "rainy" | "other" = "other";
+
+      if (mainCondition.includes("clear")) condition = "sunny";
+      else if (mainCondition.includes("cloud")) condition = "cloudy";
+      else if (
+        mainCondition.includes("rain") ||
+        mainCondition.includes("drizzle")
+      )
+        condition = "rainy";
+
+      onWeatherChange?.(condition);
+    }
+  }, [weather, onWeatherChange]);
 
   if (loading)
     return (
@@ -128,7 +149,7 @@ export default function WeatherWidget() {
           </p>
         </div>
       ) : (
-        <p className="text-red-500 text-sm">Weather unavailable</p>
+        <p className="text-red-600 Outfit-700 text-sm">Weather unavailable</p>
       )}
 
       {/* Search Input */}
@@ -138,7 +159,7 @@ export default function WeatherWidget() {
           placeholder="Check weather in another city"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border border-[#ddd] rounded-lg p-2 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-[#91765a]"
+          className="border border-[#ddd] rounded-lg p-2 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-[#91765a] text-[#1b1712] Outfit-500"
         />
         <button
           onClick={() => setSearchCity(location)}

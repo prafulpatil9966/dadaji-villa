@@ -128,7 +128,7 @@ export default function WeatherWidget() {
           </p>
         </div>
       ) : (
-        <p className="text-red-500 text-sm">Weather unavailable</p>
+        <p className="text-sm text-[#d22525] bg-[#f5eee7] px-3 py-2 rounded-lg">Weather information is currently unavailable</p>
       )}
 
       {/* Search Input */}

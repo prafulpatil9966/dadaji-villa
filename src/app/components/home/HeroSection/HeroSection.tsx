@@ -63,7 +63,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
-                    className="text-white max-w-3xl"
+                    className="text-white max-w-4xl"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-2 Outfit-700">
                         A Unique Mountain Vacation Home
@@ -105,6 +105,15 @@ const HeroSection = () => {
                     <h3 className="hidden md:block text-xl md:text-2xl mb-2 Outfit-700">Follow Us</h3>
                     <div className="mt-2 flex space-x-4 items-center">
                         <a
+                            href="https://www.instagram.com/dadajivilla/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            // Using text-white for initial visibility on the dark background
+                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                        >
+                            <FaInstagram />
+                        </a>
+                        <a
                             href="https://www.facebook.com/dadajivilla"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -121,15 +130,6 @@ const HeroSection = () => {
                             className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaXTwitter />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/dadajivilla/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            // Using text-white for initial visibility on the dark background
-                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
-                        >
-                            <FaInstagram />
                         </a>
                     </div>
                 </div>

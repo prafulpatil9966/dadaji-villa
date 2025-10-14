@@ -137,15 +137,19 @@ const Contact = () => {
                                 <CiLocationOn className="text-[#91765a] text-[35px] sm:text-[45px]" />
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Address</h4>
-                                    <p className="text-sm md:text-base leading-relaxed">
-                                        {/* Panchgani, Mahabaleshwar, Maharashtra.<br />
-                                        Pincode - 412805/06 */}
+                                    <a
+                                        href="https://maps.app.goo.gl/hUWxY2DDc4q1oMoa6"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sm md:text-base leading-relaxed hover:underline"
+                                    >
                                         Dadaji Villa, Khinger Rd, Panchgani,<br />
                                         Mahabaleshwar, Maharashtra.<br />
                                         Pincode 412805
-                                    </p>
+                                    </a>
                                 </div>
                             </div>
+
 
                             {/* Social Media */}
                             <div className="mt-10">

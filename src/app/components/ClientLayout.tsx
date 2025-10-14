@@ -4,7 +4,6 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 // import Loader from "./global-ui/Loader/Loader";
-import PreLoader from "./global-ui/PreLoader/PreLoader";
 import LoadingText from "./global-ui/LoadingText/LoadingText";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {

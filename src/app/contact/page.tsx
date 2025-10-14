@@ -40,10 +40,12 @@ const Contact = () => {
             name: getInputValue('name'),
             // email: getInputValue('email'),
             phone: getInputValue('phone'),
+            time: new Date().toLocaleString(),
             property: getInputValue('property'),
             guests: getInputValue('guests'),
             dateFrom: getInputValue('dateFrom'),
             dateTo: getInputValue('dateTo'),
+            message: getInputValue('message'),
             to_email: getInputValue('email'), // For client copy, if used in template
         };
 
@@ -136,8 +138,11 @@ const Contact = () => {
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Address</h4>
                                     <p className="text-sm md:text-base leading-relaxed">
-                                        Panchgani, Mahabaleshwar, Maharashtra.<br />
-                                        Pincode - 412805/06
+                                        {/* Panchgani, Mahabaleshwar, Maharashtra.<br />
+                                        Pincode - 412805/06 */}
+                                        Dadaji Villa, Khinger Rd, Panchgani,<br />
+                                        Mahabaleshwar, Maharashtra.<br />
+                                        Pincode 412805
                                     </p>
                                 </div>
                             </div>

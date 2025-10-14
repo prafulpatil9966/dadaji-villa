@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import './HeroSection.scss'
 import HeroButton from '../../global-ui/HeroButton/HeroButton';
 import { TiArrowDown } from "react-icons/ti";
+import { FaFacebookF, FaXTwitter, FaInstagram } from 'react-icons/fa6'; // Import icons
 
 const HeroSection = () => {
     const [isClient, setIsClient] = useState(false);
@@ -65,7 +66,7 @@ const HeroSection = () => {
                     className="text-white max-w-3xl"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-2 Outfit-700">
-                        A Unique Mountain Villa
+                        A Unique Mountain Vacation Home
                     </h2>
                     <h4 className="text-md py-2 md:text-xl font-light Outfit-300">
                         Nestled in nature, designed for rest — explore two stays, one soulful journey.
@@ -80,7 +81,7 @@ const HeroSection = () => {
                 </motion.div>
             </div>
 
-            {/* Scroll-down arrow */}
+            {/* Scroll-down arrow (Desktop only - can be shown on mobile but placed centrally) */}
             {isClient && (
                 <div className="absolute bottom-10 w-full text-center z-10">
                     <motion.a
@@ -89,14 +90,50 @@ const HeroSection = () => {
                         initial={{ y: 0 }}
                         animate={{ y: [0, 15, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="hidden md:flex items-center m-auto w-12 h-12 leading-[50px] text-white text-lg border border-white/50 rounded-full hover:border-white relative"
+                        // Changed from hidden md:flex to just flex to show on mobile (but still centered)
+                        className="flex items-center m-auto w-12 h-12 leading-[50px] text-white text-lg border border-white/50 rounded-full hover:border-white relative"
                     >
                         <TiArrowDown className="mx-auto text-white text-xl" />
                     </motion.a>
-
                 </div>
-
             )}
+
+            {/* Follow Us section - Updated for both mobile and desktop visibility */}
+            <div className="absolute bottom-10 right-5 md:right-10 text-left z-10 text-white">
+                <div className="mt-10">
+                    {/* Adjusted mb-2 for mobile to be slightly less space */}
+                    <h3 className="hidden md:block text-xl md:text-2xl mb-2 Outfit-700">Follow Us</h3>
+                    <div className="mt-2 flex space-x-4 items-center">
+                        <a
+                            href="https://www.facebook.com/dadajivilla"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            // Using text-white for initial visibility on the dark background
+                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                        >
+                            <FaFacebookF />
+                        </a>
+                        <a
+                            href="https://x.com/dadajivilla"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            // Using text-white for initial visibility on the dark background
+                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                        >
+                            <FaXTwitter />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/dadajivilla/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            // Using text-white for initial visibility on the dark background
+                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                        >
+                            <FaInstagram />
+                        </a>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 };

@@ -63,8 +63,9 @@ const Footer = () => {
           >
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <p className="text-sm text-white/80 mb-4">
-              Panchgani, Mahabaleshwar, Maharashtra.<br />
-              Pincode - 412805/06
+              Dadaji Villa, Khinger Rd, Panchgani,<br />
+              Mahabaleshwar, Maharashtra.<br />
+              Pincode 412805
             </p>
             <p className="text-sm text-white/80">Phone: 7045228951</p>
             <p className="text-sm text-white/80">Email: dadajivilla@gmail.com</p>

@@ -35,6 +35,10 @@ const DadajiCottage = () => {
         { src: "/dadaji-cottage/dadaji-cottage-img-12.jpg", cols: "32%" },
         { src: "/dadaji-cottage/dadaji-cottage-img-13.jpg", cols: "32%" },
         { src: "/dadaji-cottage/dadaji-cottage-img-14.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-15.jpg", cols: "49%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-16.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-17.jpg", cols: "32%" },
+        { src: "/dadaji-cottage/dadaji-cottage-img-18.jpg", cols: "32%" },
     ];
 
     const facilities = [

@@ -56,7 +56,7 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
   const handleViewMore = () => setVisibleCount((prev) => prev + 3);
 
   const visibleImages = isMobile ? images.slice(0, visibleCount) : images;
-  const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3]);
+  const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3, 2, 3]);
 
   return (
     <section className="py-12 md:py-16 bg-white">

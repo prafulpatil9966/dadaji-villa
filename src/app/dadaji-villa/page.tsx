@@ -22,10 +22,10 @@ const DadajiVilla = () => {
 
     const images = [
         { src: "/dadaji-gallery/dadaji-gallery-img-1.jpg", cols: "32%" },
-        { src: "/dadaji-gallery/dadaji-gallery-img-4.jpg", cols: "32%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-2.jpg", cols: "32%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-5.jpg", cols: "32%" },
-        { src: "/dadaji-gallery/dadaji-gallery-img-2.jpg", cols: "49%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-3.jpg", cols: "49%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-4.jpg", cols: "49%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-6.jpg", cols: "32%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-7.jpg", cols: "32%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-8.jpg", cols: "32%" },
@@ -35,6 +35,10 @@ const DadajiVilla = () => {
         { src: "/dadaji-gallery/dadaji-gallery-img-12.jpg", cols: "32%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-13.jpg", cols: "32%" },
         { src: "/dadaji-gallery/dadaji-gallery-img-14.jpg", cols: "49%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-15.jpg", cols: "49%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-16.jpg", cols: "32%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-17.jpg", cols: "32%" },
+        { src: "/dadaji-gallery/dadaji-gallery-img-18.jpg", cols: "32%" },
     ];
     const facilities = [
         { id: 1, name: "Free Wifi" },

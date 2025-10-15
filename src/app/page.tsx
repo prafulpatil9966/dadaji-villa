@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="">
       <HeroSection/>
-      <AboutSection/>
+      {/* <AboutSection/> */}
       <ServicesSecton/>
       <TestimonialsSection/>
       {/* <MenuTabs/> */}

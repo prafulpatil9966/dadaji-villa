@@ -78,7 +78,7 @@ const HeroSection = () => {
                             scrollToSectionWithOffset('rooms');
 
                         }}
-                        href="">Rooms & Villa</HeroButton>
+                        href="">Villa & Cottage</HeroButton>
                 </motion.div>
             </div>
 
@@ -104,12 +104,12 @@ const HeroSection = () => {
                 <div className="mt-10">
                     {/* Adjusted mb-2 for mobile to be slightly less space */}
                     <h3 className="hidden md:block text-xl md:text-2xl mb-2 Outfit-700">Reach Out to Us</h3>
-                    <div className="mt-2 flex space-x-4 items-center">
+                    <div className="mt-2 flex space-x-3 items-center">
                         <a
                             href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaWhatsapp />
                         </a>
@@ -118,7 +118,7 @@ const HeroSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             // Using text-white for initial visibility on the dark background
-                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaInstagram />
                         </a>
@@ -127,7 +127,7 @@ const HeroSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             // Using text-white for initial visibility on the dark background
-                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaFacebookF />
                         </a>
@@ -136,7 +136,7 @@ const HeroSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             // Using text-white for initial visibility on the dark background
-                            className="text-white text-lg md:text-xl hover:text-[#91765a] transition-colors"
+                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaXTwitter />
                         </a>

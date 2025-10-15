@@ -28,7 +28,8 @@
 
   // Ensure item takes full width on small screens
   @media (max-width: 768px) {
-    width: 100% !important;
+    width: 47% !important;
+    height: 10rem !important;
   }
 
   &.tall {

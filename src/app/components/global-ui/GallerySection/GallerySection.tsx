@@ -42,7 +42,7 @@ interface GallerySectionProps {
 }
 
 export default function GallerySection({ images, facilities }: GallerySectionProps) {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -53,10 +53,14 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleViewMore = () => setVisibleCount((prev) => prev + 3);
+  const handleViewMore = () => setVisibleCount((prev) => prev + 4);
 
   const visibleImages = isMobile ? images.slice(0, visibleCount) : images;
-  const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3, 2, 3]);
+  // const rowChunks = chunkArray(visibleImages, [3, 2, 3, 2, 3, 2, 3]);
+  const rowChunks = isMobile
+    ? chunkArray(visibleImages, new Array(Math.ceil(visibleImages.length / 2)).fill(4))
+    : chunkArray(visibleImages, [3, 2, 3, 2, 3, 2, 3]);
+
 
   return (
     <section className="py-12 md:py-16 bg-white">
@@ -84,7 +88,7 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
           {rowChunks
             .filter((row) => row.length > 0)
             .map((row, rowIndex) => (
-              <div key={rowIndex} className="gallery-row flex flex-wrap gap-4">
+              <div key={rowIndex} className="flex-row gap-1 md:gallery-row flex flex-wrap gap-4">
                 {row.map((img, index) => (
                   <motion.div
                     key={img.src}

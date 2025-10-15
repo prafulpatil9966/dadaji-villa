@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from "next/navigation";
 import './AboutSection.scss'
 
 const AboutSection = () => {
+    const router = useRouter();
     return (
         <>
             <section className="home-about-section py-20 md:pb-40 md:pt-30  bg-[#f5eee7]" id="about">
@@ -15,9 +17,9 @@ const AboutSection = () => {
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            viewport={{ once: true , amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.5 }}
                         >
-                            <div className="text-sm uppercase text-[#91765a] mb-2">Since 2007</div>
+                            <div className="text-sm uppercase text-[#91765a] mb-2">Since 2015</div>
                             <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#14100c]">A Unique Mountain Homestay</h2>
                             <p className='text-[#14100c] font-bold mr-2 mb-1'>
                                 Ground Floor :
@@ -52,10 +54,10 @@ const AboutSection = () => {
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            viewport={{ once: true , amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.5 }}
                         >
                             <div className="home-about-img-div z-10">
-                                <div className="home-about-inner-img-div">
+                                <div className="home-about-inner-img-div" onClick={() => router.push("/dadaji-villa")}>
                                     <img src="/aboutimg.jpg"
                                         alt="About"
                                         // width={600}

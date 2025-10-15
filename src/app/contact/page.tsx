@@ -5,7 +5,7 @@ import { useEffect, useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { PiPhoneCallThin, PiMailboxThin } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
-import { FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import useDevicePlatform from '@/hooks/useDevicePlatform';
 import OkPopup from '../components/global-ui/OkPopup/OkPopup';
@@ -28,6 +28,14 @@ const Contact = () => {
         mediaQuery.addEventListener('change', handleResize);
         return () => mediaQuery.removeEventListener('change', handleResize);
     }, []);
+    const formatDate = (dateString: string) => {
+        if (!dateString) return "";
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -40,16 +48,15 @@ const Contact = () => {
             name: getInputValue('name'),
             // email: getInputValue('email'),
             phone: getInputValue('phone'),
-            time: new Date().toLocaleString(),
+            time: formatDate(new Date().toISOString()),
             property: getInputValue('property'),
             guests: getInputValue('guests'),
-            dateFrom: getInputValue('dateFrom'),
-            dateTo: getInputValue('dateTo'),
+            dateFrom: formatDate(getInputValue('dateFrom')),
+            dateTo: formatDate(getInputValue('dateTo')),
             message: getInputValue('message'),
-            to_email: getInputValue('email'), // For client copy, if used in template
+            to_email: "dadajivilla@gmail.com", // For client copy, if used in template
         };
 
-        debugger
         try {
             await emailjs.send(
                 'service_ftql377',
@@ -179,6 +186,15 @@ const Contact = () => {
                                     >
                                         <FaInstagram />
                                     </a>
+                                    <a
+                                        href="https://wa.me/919876543210?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"
+                                    >
+                                        <FaWhatsapp />
+                                    </a>
+
                                 </div>
                             </div>
                         </motion.div>

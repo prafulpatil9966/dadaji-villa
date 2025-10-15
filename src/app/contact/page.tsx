@@ -187,7 +187,7 @@ const Contact = () => {
                                         <FaInstagram />
                                     </a>
                                     <a
-                                        href="https://wa.me/919876543210?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
+                                        href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"

@@ -14,7 +14,7 @@ const fadeInUp = {
 export default function AboutInfo() {
     return (
         <section className="py-10 md:py-20">
-            <div className="max-w-5xl mx-auto px-4">
+            <div className="max-w-5xl mx-auto px-6">
                 <div className="text-center">
                     <motion.h2
                         custom={1}

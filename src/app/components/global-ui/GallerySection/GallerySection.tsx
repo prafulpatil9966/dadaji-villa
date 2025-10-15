@@ -84,11 +84,11 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
         </motion.div>
 
         {/* Gallery Images */}
-        <div className="gallery-wrapper space-y-[28px] overflow-hidden">
+        <div className="gallery-wrapper space-y-[16px] overflow-hidden">
           {rowChunks
             .filter((row) => row.length > 0)
             .map((row, rowIndex) => (
-              <div key={rowIndex} className="flex-row gap-1 md:gallery-row flex flex-wrap gap-4">
+              <div key={rowIndex} className="flex-row md:gallery-row flex flex-wrap gap-4">
                 {row.map((img, index) => (
                   <motion.div
                     key={img.src}

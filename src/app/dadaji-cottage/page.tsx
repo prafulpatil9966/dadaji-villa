@@ -8,7 +8,7 @@ import useDevicePlatform from '@/hooks/useDevicePlatform';
 const DadajiCottage = () => {
     const [isMobileView, setIsMobileView] = useState(false);
     const { isIOS } = useDevicePlatform();
-    
+
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const handleResize = () => setIsMobileView(mediaQuery.matches);
@@ -51,6 +51,12 @@ const DadajiCottage = () => {
         { id: 8, name: "Barbeque" },
         { id: 9, name: "Bonfire" }
     ];
+    const layout = [
+        { id: 1, text: "A Valley View Cottage having 2 bedrooms interconnected by a door in between." },
+        { id: 2, text: "One bedroom is small measuring 7×9 feet and other bedroom is large measuring 11×13 feet with one attached bathroom." },
+        { id: 3, text: "It has a private valley side backyard lawn." }
+    ]
+
     return (
         <div className="bg-[#f5eee7] text-black overflow-hidden">
             <div
@@ -71,7 +77,7 @@ const DadajiCottage = () => {
                     Dadaji Cottage
                 </motion.h2>
             </div>
-            <GallerySection images={images} facilities={facilities}/>
+            <GallerySection images={images} facilities={facilities} layout={layout} />
         </div>
 
     )

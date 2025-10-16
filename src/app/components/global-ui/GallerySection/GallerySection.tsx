@@ -39,9 +39,13 @@ interface GallerySectionProps {
     id: number;
     name: string;
   }[];
+  layout: {
+    id: number;
+    text: string;
+  }[];
 }
 
-export default function GallerySection({ images, facilities }: GallerySectionProps) {
+export default function GallerySection({ images, facilities, layout }: GallerySectionProps) {
   const [visibleCount, setVisibleCount] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
@@ -72,15 +76,23 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          <h3 className="text-3xl font-bold text-gray-800 mb-7">What We Provide</h3>
+          <h3 className="text-3xl font-bold text-gray-800 mb-7 Outfit-700">What We Provide</h3>
+          <div className="bg-[#f7f4f0] about-we-provide p-6 rounded-lg shadow-sm text-left mb-5">
+            <ul className="text-sm  md:gap-y-2 list-disc list-inside text-gray-700 text-md Outfit-400">
+              {layout?.map((item) => (
+                <li key={item.id}>{item.text}</li>
+              ))}
+            </ul>
+          </div>
           <div className="bg-[#f7f4f0] about-we-provide p-6 rounded-lg shadow-sm text-left mb-12">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 list-disc list-inside text-gray-700 text-sm">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 list-disc list-inside text-gray-700 text-sm Outfit-400">
               {facilities?.map((item) => (
                 <li key={item.id}>{item.name}</li>
               ))}
             </ul>
           </div>
-          <h2 className="text-3xl font-bold text-gray-800">Image Gallery</h2>
+
+          <h2 className="text-3xl font-bold text-gray-800 Outfit-700">Image Gallery</h2>
         </motion.div>
 
         {/* Gallery Images */}
@@ -104,7 +116,7 @@ export default function GallerySection({ images, facilities }: GallerySectionPro
                       src={img.src}
                       alt={`Gallery image ${index}`}
                       onClick={() => setCurrentIndex(images.indexOf(img))}
-                      className="img-gallery-item transform transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full cursor-pointer"
+                      className="img-gallery-item transform transition-transform duration-300 group-hover:scale-105 object-cover h-full w-full cursor-pointer rounded"
                     />
                     <div className="absolute inset-0 bg-black opacity-0 md:opacity-40 pointer-events-none transition-opacity duration-500 group-hover:opacity-0" />
                   </motion.div>

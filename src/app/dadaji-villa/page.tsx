@@ -51,6 +51,11 @@ const DadajiVilla = () => {
         { id: 8, name: "Barbeque" },
         { id: 9, name: "Bonfire" }
     ];
+    const layout = [
+        { id: 1, text: "A 4BHK Valley View Villa with upper floor externally connected to ground floor." },
+        { id: 2, text: "Ground floor has 2 bedrooms, 1 bathroom, 1 living room, kitchen, verandah with a swing and a garden." },
+        { id: 3, text: "Upper floor has 2 bedrooms, 2 attached bathrooms, valley facing terrace sit out next to the bedrooms." }
+    ]
 
 
     return (
@@ -73,7 +78,7 @@ const DadajiVilla = () => {
                     Dadaji Villa
                 </motion.h2>
             </div>
-            <GallerySection images={images} facilities={facilities} />
+            <GallerySection images={images} facilities={facilities} layout={layout} />
         </div>
 
     )

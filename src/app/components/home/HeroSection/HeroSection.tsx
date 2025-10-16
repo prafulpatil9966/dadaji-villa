@@ -72,7 +72,7 @@ const HeroSection = () => {
                     <h4 className="text-md py-2 md:text-xl font-light Outfit-300">
                         Nestled in nature, designed for rest — explore two stays, one soulful journey.
                     </h4>
-                    <HeroButton
+                    <HeroButton className='Outfit-500'
                         onClick={(e) => {
                             e.preventDefault();  // Prevent default anchor jump
                             scrollToSectionWithOffset('rooms');

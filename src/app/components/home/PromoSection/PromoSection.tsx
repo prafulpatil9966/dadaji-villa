@@ -29,9 +29,9 @@ const PromoSection = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={fadeInUp}
-                                className="text-3xl md:text-4xl text-center font-bold mb-6 text-gray-800"
+                                className="text-3xl md:text-4xl text-center font-bold mb-6 text-gray-800 Outfit-700"
                             >
-                                So Many Ways to Unwind
+                                About Us
 
                             </motion.h2>
 
@@ -41,7 +41,7 @@ const PromoSection = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={fadeInUp}
-                                className="text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2"
+                                className="text-sm md:text-[16px] text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2 Outfit-400"
                             >
                                 Welcome to Dadaji Villa, a serene vacation home in the heart of Panchgani, Mahabaleshwar, offering breathtaking valley views and the perfect blend of comfort and nature.
                             </motion.p>
@@ -51,7 +51,7 @@ const PromoSection = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={fadeInUp}
-                                className="text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2"
+                                className="text-sm md:text-[16px] text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2 Outfit-400"
                             >
                                 Founded in 2015, Dadaji Villa began as a personal dream turned into a heartfelt venture. I’m Pratik Patil, the founder of Dadaji Villa. While working as an Airplane Engineer, my love for nature and mountains inspired me to create a peaceful escape for travelers — a place where they could unwind, reconnect, and experience the tranquility I’ve always admired.
 
@@ -62,7 +62,7 @@ const PromoSection = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={fadeInUp}
-                                className="text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2"
+                                className="text-sm md:text-[16px] text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2 Outfit-400"
                             >
                                 What started as a passion project soon became a cherished destination for families, friends, and nature lovers seeking a cozy, private retreat in the hills. Every corner of Dadaji Villa reflects warmth, care, and the essence of mountain living.
                             </motion.p>
@@ -72,7 +72,7 @@ const PromoSection = () => {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.5 }}
                                 variants={fadeInUp}
-                                className="text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2"
+                                className="text-sm md:text-[16px] text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mb-2 Outfit-400"
                             >
                                 Here, it’s not just about staying — it’s about feeling at home amid the clouds.
                             </motion.p>

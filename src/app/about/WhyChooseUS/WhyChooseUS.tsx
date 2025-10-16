@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaCar, FaBed, FaWifi } from 'react-icons/fa';
+import { FaCar, FaWifi, FaBroom } from 'react-icons/fa';
 import './WhyChooseUS.scss'
 
 
@@ -9,19 +9,19 @@ const WhyChooseUS = () => {
     const facilities = [
         {
             icon: <FaCar className="text-4xl text-primary" />,
-            title: 'Parking Space',
-            description: 'Spacious and secure parking area available for all guests, ensuring convenience and peace of mind.',
-        },
-        {
-            icon: <FaBed className="text-4xl text-primary" />,
-            title: 'Room Service',
-            description: 'Enjoy 24/7 room service with a variety of delicious meals and amenities delivered to your door.',
+            title: "Parking Space",
+            description: "Secure parking area available for all guests, ensuring convenience and peace of mind.",
         },
         {
             icon: <FaWifi className="text-4xl text-primary" />,
-            title: 'Fibre Internet',
-            description: 'Stay connected with our high-speed fibre internet, perfect for work or entertainment.',
-        }
+            title: "High-speed Internet",
+            description: "Stay connected with our high-speed fibre internet, perfect for work or entertainment.",
+        },
+        {
+            icon: <FaBroom className="text-4xl text-primary" />,
+            title: "Clean and Hygienic",
+            description: "We maintain high hygiene standards to ensure a safe and pleasant stay for all our guests.",
+        },
     ];
 
     const itemVariants = {

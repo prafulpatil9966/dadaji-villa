@@ -11,8 +11,8 @@ export const faqs: FAQItem[] = [
     answer: 'Dadaji Villa is located in a serene countryside setting, just 20 minutes from the city center. You can find detailed directions on our Contact page.',
   },
   {
-    question: 'What are the check-in and check-out times?',
-    answer: 'Check-in is from 1:00 PM onwards and check-out is until 11:00 AM. Early check-in or late check-out requests are subject to availability.',
+    question: 'Do you provide food?',
+    answer: 'Yes, we provide delicious homely food if ordered in advance.',
   },
   {
     question: 'Is Wi-Fi available at the villa?',

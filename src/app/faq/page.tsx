@@ -62,7 +62,7 @@ export default function FaqSection() {
                             >
                                 <button
                                     onClick={() => toggle(index)}
-                                    className=" w-full text-left px-6 py-6 bg-white focus:outline-none flex justify-between items-center"
+                                    className="py-4 w-full text-left px-6 md:py-6 bg-white focus:outline-none flex justify-between items-center"
                                 >
                                     <span
                                         className={`Outfit-700 font-medium text-[19px] transition-colors duration-300 ${openIndex === index ? 'text-[#91765a]' : 'text-[#14100c]'

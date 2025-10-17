@@ -1,0 +1,32 @@
+/* Styling for Swiper Navigation Arrows */
+
+/* Targets the next button */
+.swiper-button-next {
+    color: white !important;
+    /* Forces the color to white */
+    width: 30px !important;
+    /* Sets the width (makes it smaller) */
+    height: 30px !important;
+    /* Sets the height (makes it smaller) */
+    /* You might also need to adjust the font size if you see the icon is still large */
+    /* font-size: 16px !important; */
+}
+
+/* Targets the previous button */
+.swiper-button-prev {
+    color: white !important;
+    /* Forces the color to white */
+    width: 30px !important;
+    /* Sets the width (makes it smaller) */
+    height: 30px !important;
+    /* Sets the height (makes it smaller) */
+    /* You might also need to adjust the font size if you see the icon is still large */
+    /* font-size: 16px !important; */
+}
+
+/* Optional: To remove the default Swiper background or adjust its position/shape */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px !important;
+    /* Makes the arrow icon itself smaller */
+}

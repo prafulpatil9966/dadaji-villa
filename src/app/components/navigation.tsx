@@ -53,12 +53,12 @@ const Navbar = () => {
       <div className="container px-5 md:px-0 mx-auto py-4 flex justify-between items-center h-[80px] md:h-[90px] lg:h-[90px] border-b border-white/10">
         <Link href="/" className="block">
           <img
-            src="/nav-logonew.png"
+            src="/new-logo.png"
             alt="Logo"
             // width={0}  
             // height={0}
             sizes="(max-width: 640px) 80px, (max-width: 768px) 100px, 120px"
-            className="w-[70px] sm:w-[80px] md:w-[100px] lg:w-[120px] h-auto"
+            className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
           />
         </Link>
 

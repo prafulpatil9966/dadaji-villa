@@ -76,12 +76,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <InitialLoaderWrapper>
-          <ClientLayout>
+          {/* <ClientLayout> */}
             <Navigation />
             {children}
             <ScrollProgressCircle />
             <Footer />
-          </ClientLayout>
+          {/* </ClientLayout> */}
         </InitialLoaderWrapper>
 
         {/* JSON-LD Schema for SEO */}

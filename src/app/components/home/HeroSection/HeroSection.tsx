@@ -6,7 +6,7 @@ import './HeroSection.scss'
 import HeroButton from '../../global-ui/HeroButton/HeroButton';
 import { TiArrowDown } from "react-icons/ti";
 import { FaFacebookF, FaXTwitter, FaInstagram } from 'react-icons/fa6'; // Import icons
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 const HeroSection = () => {
     const [isClient, setIsClient] = useState(false);
@@ -100,33 +100,18 @@ const HeroSection = () => {
             )}
 
             {/* Follow Us section - Updated for both mobile and desktop visibility */}
-            <div className="absolute bottom-10 right-5 md:right-10 text-left z-10 text-white">
+            {/* Left side (WhatsApp + Call) */}
+
+
+            {/* Right side (Socials) */}
+            <div className="absolute bottom-10 left-5 md:right-10 text-left z-10 text-white">
                 <div className="mt-10">
-                    {/* Adjusted mb-2 for mobile to be slightly less space */}
                     <h3 className="hidden md:block text-xl md:text-2xl mb-2 Outfit-700">Reach Out to Us</h3>
                     <div className="mt-2 flex space-x-3 items-center">
-                        <a
-                            href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
-                        >
-                            <FaWhatsapp />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/dadajivilla/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            // Using text-white for initial visibility on the dark background
-                            className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
-                        >
-                            <FaInstagram />
-                        </a>
                         <a
                             href="https://www.facebook.com/dadajivilla"
                             target="_blank"
                             rel="noopener noreferrer"
-                            // Using text-white for initial visibility on the dark background
                             className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaFacebookF />
@@ -135,7 +120,6 @@ const HeroSection = () => {
                             href="https://x.com/dadajivilla"
                             target="_blank"
                             rel="noopener noreferrer"
-                            // Using text-white for initial visibility on the dark background
                             className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                         >
                             <FaXTwitter />
@@ -143,6 +127,31 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+            <div className="absolute bottom-10 right-5 md:left-10 flex space-x-3 items-center text-white z-10">
+                <a
+                    href="https://www.instagram.com/dadajivilla/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
+                >
+                    <FaInstagram />
+                </a>
+                <a
+                    href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
+                >
+                    <FaWhatsapp />
+                </a>
+                <a
+                    href="tel:+917045228951"
+                    className="text-white text-l md:text-xl hover:text-[#91765a] transition-colors"
+                >
+                    <FaPhoneAlt />
+                </a>
+            </div>
+
         </header>
     );
 };

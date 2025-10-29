@@ -54,7 +54,7 @@ const Contact = () => {
             dateFrom: formatDate(getInputValue('dateFrom')),
             dateTo: formatDate(getInputValue('dateTo')),
             message: getInputValue('message'),
-            to_email: "dadajisvilla@gmail.com", // For client copy, if used in template
+            to_email: "dadajivilla@gmail.com", // For client copy, if used in template
         };
 
         try {
@@ -113,7 +113,10 @@ const Contact = () => {
 
                             {/* Reservation */}
                             <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
-                                <PiPhoneCallThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <a
+                                    href="tel:7045228951">
+                                    <PiPhoneCallThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                </a>
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Reservation</h4>
                                     <a
@@ -127,7 +130,10 @@ const Contact = () => {
 
                             {/* Email Info */}
                             <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
-                                <PiMailboxThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <a
+                                    href="mailto:dadajivilla@gmail.com">
+                                    <PiMailboxThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                </a>
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Email Info</h4>
                                     <a
@@ -141,7 +147,12 @@ const Contact = () => {
 
                             {/* Address */}
                             <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
-                                <CiLocationOn className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                <a
+                                    href="https://maps.app.goo.gl/hUWxY2DDc4q1oMoa6"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <CiLocationOn className="text-[#91765a] text-[35px] sm:text-[45px]" />
+                                </a>
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Address</h4>
                                     <a

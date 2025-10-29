@@ -68,7 +68,7 @@ const Footer = () => {
               Pincode 412805
             </p>
             <p className="text-sm text-white/80">Phone: 7045228951</p>
-            <p className="text-sm text-white/80">Email: dadajivilla@gmail.com</p>
+            <p className="text-sm text-white/80">Email: dadajisvilla@gmail.com</p>
             <div className="flex items-center space-x-4 mt-4 text-lg">
               <a href="https://www.instagram.com/dadajivilla/"
                 target="_blank"

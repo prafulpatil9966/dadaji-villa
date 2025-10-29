@@ -54,7 +54,7 @@ const Contact = () => {
             dateFrom: formatDate(getInputValue('dateFrom')),
             dateTo: formatDate(getInputValue('dateTo')),
             message: getInputValue('message'),
-            to_email: "dadajivilla@gmail.com", // For client copy, if used in template
+            to_email: "dadajisvilla@gmail.com", // For client copy, if used in template
         };
 
         try {

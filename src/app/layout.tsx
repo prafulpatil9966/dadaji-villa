@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./styles/fonts.scss";
 import "./globals.css";
 import Navigation from "./components/navigation";
@@ -8,6 +8,12 @@ import ClientLayout from "./components/ClientLayout";
 import InitialLoaderWrapper from "./components/global-ui/InitialLoaderWrapper/InitialLoaderWrapper";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { GA_MEASUREMENT_ID } from "../lib/analytics";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -78,11 +84,6 @@ export const metadata: Metadata = {
     icon: "/favicon-dadaji.ico",
     shortcut: "/favicon-dadaji.ico",
     apple: "/favicon-dadaji.ico",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   verification: {
     google: "your-google-search-console-verification-code", // Replace with actual code

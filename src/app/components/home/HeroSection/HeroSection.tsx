@@ -100,10 +100,11 @@ const HeroSection = () => {
             )}
 
             {/* Follow Us section - Updated for both mobile and desktop visibility */}
-            {/* Left side (WhatsApp + Call) */}
 
 
-            {/* Right side (Socials) */}
+
+
+            {/* Left side (Facebook + X) */}
             <div className="absolute bottom-10 left-5 md:right-10 text-left z-10 text-white">
                 <div className="mt-10">
                     <h3 className="hidden md:block text-xl md:text-2xl mb-2 Outfit-700">Reach Out to Us</h3>
@@ -127,30 +128,34 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-10 right-5 md:left-10 flex space-x-3 items-center text-white z-10">
-                <a
-                    href="https://www.instagram.com/dadajivilla/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
-                >
-                    <FaInstagram />
-                </a>
+
+            {/* Right side (WhatsApp + Call + Instagram) */}
+            <div className="absolute bottom-10 right-5 md:right-auto md:left-20 flex space-x-3 items-center text-white z-10">
                 <a
                     href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
+                    className="text-white text-2xl md:text-2xl hover:text-[#91765a] transition-colors"
                 >
                     <FaWhatsapp />
                 </a>
                 <a
+                    href="https://www.instagram.com/dadajivilla/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-2xl md:text-2xl hover:text-[#91765a] transition-colors"
+                >
+                    <FaInstagram />
+                </a>
+                <a
                     href="tel:+917045228951"
-                    className="text-white text-l md:text-xl hover:text-[#91765a] transition-colors"
+                    className="text-white text-xl md:text-xl hover:text-[#91765a] transition-colors"
                 >
                     <FaPhoneAlt />
                 </a>
+
             </div>
+
 
         </header>
     );

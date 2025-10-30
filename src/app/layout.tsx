@@ -6,6 +6,8 @@ import ScrollProgressCircle from "./components/ScrollProgressCircle/ScrollProgre
 import Footer from "./components/Footer/footer";
 import ClientLayout from "./components/ClientLayout";
 import InitialLoaderWrapper from "./components/global-ui/InitialLoaderWrapper/InitialLoaderWrapper";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { GA_MEASUREMENT_ID } from "../lib/analytics";
 
 export const metadata: Metadata = {
   title: "Dadaji Villa | Luxury Mountain Homestay in Panchgani, Maharashtra",
@@ -83,6 +85,9 @@ export default function RootLayout({
             <Footer />
           {/* </ClientLayout> */}
         </InitialLoaderWrapper>
+        
+        {/* Google Analytics */}
+        {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
 
         {/* JSON-LD Schema for SEO */}
         <script

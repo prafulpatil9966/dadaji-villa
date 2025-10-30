@@ -11,6 +11,7 @@ import useDevicePlatform from '@/hooks/useDevicePlatform';
 import OkPopup from '../components/global-ui/OkPopup/OkPopup';
 import ErrorPopup from '../components/global-ui/ErrorPopup/ErrorPopup';
 import WeatherWidget from '../components/WeatherWidget/WeatherWidget';
+import { useAnalytics, usePageTracking } from '@/hooks/useAnalytics';
 
 const Contact = () => {
     const [isMobileView, setIsMobileView] = useState(false);
@@ -18,6 +19,10 @@ const Contact = () => {
     const [todayDate, setTodayDate] = useState("");
     const [popupOpen, setPopupOpen] = useState(false);
     const [errorPopup, setErrorPopup] = useState(false);
+    
+    // Analytics tracking
+    const { trackContactFormSubmit, trackPhoneClick, trackWhatsAppClick } = useAnalytics();
+    usePageTracking('Contact Page');
 
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0];
@@ -65,6 +70,9 @@ const Contact = () => {
                 'k06lU5uJJc3A01EmN'
             );
 
+            // Track successful form submission
+            trackContactFormSubmit();
+            
             // alert('Message sent successfully!');
             setPopupOpen(true)
             form.reset();
@@ -114,13 +122,15 @@ const Contact = () => {
                             {/* Reservation */}
                             <div className="mb-6 flex flex-row sm:flex-row items-center sm:items-center gap-4">
                                 <a
-                                    href="tel:7045228951">
+                                    href="tel:7045228951"
+                                    onClick={trackPhoneClick}>
                                     <PiPhoneCallThin className="text-[#91765a] text-[35px] sm:text-[45px]" />
                                 </a>
                                 <div>
                                     <h4 className="text-[#91765a] font-semibold mb-1 text-sm md:text-base">Reservation</h4>
                                     <a
                                         href="tel:7045228951"
+                                        onClick={trackPhoneClick}
                                         className="text-xl sm:text-2xl text-[#14100c] hover:text-[#91765a] Outfit-700 block"
                                     >
                                         7045228951
@@ -201,6 +211,7 @@ const Contact = () => {
                                         href="https://wa.me/917045228951?text=Hi%20Dadaji%20Villa%2C%20I%20would%20like%20to%20know%20more%20about%20booking."
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={trackWhatsAppClick}
                                         className="text-[#91765a] text-lg md:text-xl hover:text-[#14100c] transition-colors"
                                     >
                                         <FaWhatsapp />

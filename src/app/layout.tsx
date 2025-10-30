@@ -10,18 +10,28 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { GA_MEASUREMENT_ID } from "../lib/analytics";
 
 export const metadata: Metadata = {
-  title: "Dadaji Villa | Luxury Mountain Homestay in Panchgani, Maharashtra",
+  title: {
+    default: "Dadaji Villa | Luxury Mountain Homestay in Panchgani, Maharashtra",
+    template: "%s | Dadaji Villa - Luxury Homestay Panchgani"
+  },
   description:
-    "Book your stay at Dadaji Villa — a serene mountain homestay in Panchgani with breathtaking valley views, cozy interiors, and warm hospitality. Perfect for families and friends.",
+    "Book your stay at Dadaji Villa — a serene mountain homestay in Panchgani with breathtaking valley views, cozy interiors, and warm hospitality. Perfect for families and friends seeking a peaceful retreat in Maharashtra's hill country.",
   keywords: [
     "Dadaji Villa",
-    "Panchgani stay",
-    "Mountain homestay",
-    "Luxury villa in Panchgani",
-    "Hotels near Mahabaleshwar",
-    "Family vacation villa",
-    "Dadaji Villa booking",
-    "Hill view homestay Maharashtra",
+    "Panchgani homestay",
+    "luxury villa Panchgani", 
+    "mountain homestay Maharashtra",
+    "Mahabaleshwar accommodation",
+    "hill station stay",
+    "valley view villa",
+    "family vacation rental",
+    "weekend getaway Panchgani",
+    "private villa booking",
+    "Dadaji Villa Khinger Road",
+    "homestay near Mahabaleshwar",
+    "Panchgani hotel alternative",
+    "mountain retreat Maharashtra",
+    "luxury accommodation Panchgani"
   ],
   authors: [{ name: "Dadaji Villa Team", url: "https://dadajivilla.com" }],
   creator: "Dadaji Villa",
@@ -66,7 +76,19 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon-dadaji.ico",
+    shortcut: "/favicon-dadaji.ico",
+    apple: "/favicon-dadaji.ico",
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  verification: {
+    google: "your-google-search-console-verification-code", // Replace with actual code
+    // bing: "your-bing-verification-code", // Add if you use Bing
+  },
+  category: "travel",
 };
 
 export default function RootLayout({
@@ -75,7 +97,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <meta name="theme-color" content="#91765a" />
+        <meta name="msapplication-TileColor" content="#91765a" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </head>
       <body className="antialiased">
         <InitialLoaderWrapper>
           {/* <ClientLayout> */}
@@ -89,7 +123,7 @@ export default function RootLayout({
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
 
-        {/* JSON-LD Schema for SEO */}
+        {/* Enhanced JSON-LD Schema for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -97,20 +131,56 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LodgingBusiness",
               name: "Dadaji Villa",
-              image: "https://dadajivilla.com/aboutimg.jpg",
+              alternateName: ["Dadaji Villa Panchgani", "Dadaji Villa Homestay"],
+              image: [
+                "https://dadajivilla.com/aboutimg.jpg",
+                "https://dadajivilla.com/dadaji-villa/dadaji-villa-img-1.jpg",
+                "https://dadajivilla.com/common/hero-img.jpg"
+              ],
               description:
-                "Luxury mountain homestay in Panchgani with 4 bedrooms, private terrace, and valley views.",
+                "Luxury mountain homestay in Panchgani offering two unique accommodations: Dadaji Villa (4-bedroom) and Dadaji Cottage (2-bedroom) with breathtaking valley views and modern amenities.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Dadaji Villa, Khinger Rd, Panchgani",
-                addressLocality: "Mahabaleshwar",
-                addressRegion: "Maharashtra",
+                addressLocality: "Panchgani",
+                addressRegion: "Maharashtra", 
                 postalCode: "412805",
                 addressCountry: "IN",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "17.905126",
+                longitude: "73.817086"
+              },
               telephone: "+917045228951",
+              email: "dadajivilla@gmail.com",
               url: "https://dadajivilla.com",
-              priceRange: "₹4000",
+              sameAs: [
+                "https://www.facebook.com/dadajivilla",
+                "https://www.instagram.com/dadajivilla/", 
+                "https://x.com/dadajivilla"
+              ],
+              priceRange: "₹4000-₹12000",
+              currenciesAccepted: "INR",
+              paymentAccepted: ["Cash", "Credit Card", "UPI", "Bank Transfer"],
+              starRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5"
+              },
+              amenityFeature: [
+                { "@type": "LocationFeatureSpecification", name: "Valley Views" },
+                { "@type": "LocationFeatureSpecification", name: "Private Terrace" },
+                { "@type": "LocationFeatureSpecification", name: "Free WiFi" },
+                { "@type": "LocationFeatureSpecification", name: "Kitchen Facilities" },
+                { "@type": "LocationFeatureSpecification", name: "Parking" },
+                { "@type": "LocationFeatureSpecification", name: "Pet Friendly" }
+              ],
+              checkInTime: "14:00",
+              checkOutTime: "11:00",
+              numberOfRooms: "6",
+              maximumAttendeeCapacity: "40",
+              smokingPolicy: "https://dadajivilla.com/smoking-policy"
             }),
           }}
         />
